@@ -21,14 +21,14 @@ function showSlides() {
     var imgNum = document.getElementsByClassName("slideNum");
     var captionText = document.getElementsByClassName("caption");
     var dots = document.getElementsByClassName("thumbnail_img");
-    if (slideIndex > slides.length - 1) { slideIndex = 0 }
-    if (slideIndex < 0) { slideIndex = slides.length - 1 }
+    if (slideIndex > cse167hw1_imgs.length - 1) { slideIndex = 0 }
+    if (slideIndex < 0) { slideIndex = cse167hw1_imgs.length - 1 }
     for (var i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
     slides[0].src = cse167hw1_imgs[slideIndex];
     slides[0].style.display = "block";
-    imgNum.innerHTML = (slideIndex + 1) + " / " + cse167hw1_imgs.length;
+    imgNum[0].innerHTML = (slideIndex + 1) + " / " + cse167hw1_imgs.length;
     dots[slideIndex].className += " active";
     captionText[0].innerHTML = dots[slideIndex].alt;
 }
