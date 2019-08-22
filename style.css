@@ -1,28 +1,60 @@
 ﻿/* All HTML Files */
-body{
+* {
+    font-family: 'Century Gothic';
+    color: white;
+}
+
+body {
+    background: #212529;
 }
 
 header {
     position: sticky;
     top: 0;
-    background: #FFFFFF;
+    background: #202225;
 }
 
-hr {
-    background: #3A223D;
-    height: 5px;
+nav {
+    margin-top: 15%;
+    text-align: right;
+    grid-area: main2;
 }
 
-.change_font{
-    font-family: 'Century Gothic';
-}
-
-.nav_links{
-    list-style-type: none;
+.background {
+    background: #202225;
+    margin: 5%;
+    padding: 3%;
+    border-radius: 20px;
 }
 
 .my_name {
+    color: #6597bb;
     font-weight: bold;
+    font-size: 50px;
+    margin: 0;
+    grid-area: main;
+}
+
+.grid_main {
+    padding-left: 15px;
+    padding-right: 15px;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-areas: "main main2";
+    align-items: flex-end;
+}
+
+.menu_item {
+    color: #6597bb;
+    font-size: 20px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.divider {
+    background: black;
+    height: 5px;
+    margin-top: 5px;
 }
 
 /* -------------------------------- */

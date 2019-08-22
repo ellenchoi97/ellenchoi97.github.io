@@ -4,61 +4,88 @@
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="style.css" />
+    <script type="module">
+        import { initGallery } from './script.js';
+        window.onload = initGallery;
+    </script>
     <title>Ellen Choi Portfolio</title>
 </head>
 <body>
     <header>
-        <h1 class="change_font my_name">ELLEN CHOI</h1>
+        <div class="grid_main">
+            <h1 class="my_name">ELLEN CHOI</h1>
 
-        <nav>
-            <ul class="nav_links">
-                <li class="change_font">Projects</li>
-                <li class="change_font">About</li>
-            </ul>
-        </nav>
+            <nav>
+                <a class="menu_item" href="index.html">Projects</a>
+                <a class="menu_item" href="index.html">About</a>
+            </nav>
+        </div>
 
-        <hr />
+        <div class="divider"></div>
     </header>
-    <h1 class="change_font">Rendering Point Clouds</h1>
 
-    <a href="http://ivl.calit2.net/wiki/index.php/Project1F18">Project Rubric and Directions</a>
+    <div class="background">
+        <h1 class="">Rendering Point Clouds</h1>
 
-    <p>Goals for this Project:</p>
+        <!-- Code for image gallery: https://www.w3schools.com/howto/howto_js_slideshow_gallery.asp -->
+        <!-- Container for the image gallery -->
+        <div class="gallery_container gallery">
 
-    <ol>
-        <li>Parse 3D points from three different .obj files</li>
-        <li>Display the points with normal coloring using OpenGL. All models rotate continuously.</li>
-        <li>Center and scale the models so they fit in the graphics window.</li>
-    </ol>
+            <!-- Full-width images with number text -->
+            <div class="slide gallery">
+                <span class="slideNum gallery">1 / 4</span>
+                <img src="Assets/CSE167HW1/HW_1_Bunny.gif" class="gallery_img gallery">
+            </div>
 
-    <p>Keyboard Key Functions:</p>
+            <div class="slide gallery">
+                <span class="slideNum gallery">2 / 4</span>
+                <img src="Assets/CSE167HW1/HW_1_Dragon.gif" class="gallery_img gallery">
+            </div>
 
-    <ul>
-        <li>F1: Render the point cloud for the bunny model</li>
-        <li>F2: Render the point cloud for the dragon model</li>
-        <li>F3: Render the point cloud for the bear model</li>
-        <li>P/p: Adjust the size of the points</li>
-    </ul>
+            <div class="slide gallery">
+                <span class="slideNum gallery">3 / 4</span>
+                <img src="Assets/CSE167HW1/HW_1_Bear.gif" class="gallery_img gallery">
+            </div>
 
-    <figure>
-        <img src="Assets/CSE167HW1/HW_1_Bunny.gif" />
-        <figcaption>Point cloud rendering for bunny model</figcaption>
-    </figure>
+            <div class="slide gallery">
+                <span class="slideNum gallery">4 / 4</span>
+                <img src="Assets/CSE167HW1/HW_1_Points.gif" class="gallery_img gallery">
+            </div>
 
-    <figure>
-        <img src="Assets/CSE167HW1/HW_1_Dragon.gif" />
-        <figcaption>Point cloud rendering for dragon model</figcaption>
-    </figure>
+            <!-- Next and previous buttons -->
+            <button class="prev cursor">&#10094;</button>
+            <button class="next cursor">&#10095;</button>
 
-    <figure>
-        <img src="Assets/CSE167HW1/HW_1_Bear.gif" />
-        <figcaption>Point cloud rendering for bear model</figcaption>
-    </figure>
+            <!-- Image text -->
+            <p class="caption"></p>
 
-    <figure>
-        <img src="Assets/CSE167HW1/HW_1_Points.gif" />
-        <figcaption>Increasing and decreasing size of points in the point cloud</figcaption>
-    </figure>
+            <!-- Thumbnail images -->
+            <div class="thumbnails">
+                <img class="thumbnail_img cursor" src="Assets/CSE167HW1/HW_1_Bunny.gif" alt="Point cloud rendering for bunny model">
+                <img class="thumbnail_img cursor" src="Assets/CSE167HW1/HW_1_Dragon.gif" alt="Point cloud rendering for dragon model">
+                <img class="thumbnail_img cursor" src="Assets/CSE167HW1/HW_1_Bear.gif" alt="Point cloud rendering for bear model">
+                <img class="thumbnail_img cursor" src="Assets/CSE167HW1/HW_1_Points.gif" alt="Increasing and decreasing size of points in the point cloud">
+            </div>
+        </div>
 
+        <a href="http://ivl.calit2.net/wiki/index.php/Project1F18">Project Rubric and Directions</a>
+
+        <p>Goals for this Project:</p>
+
+        <ol>
+            <li>Parse 3D points from three different .obj files</li>
+            <li>Display the points with normal coloring using OpenGL. All models rotate continuously.</li>
+            <li>Center and scale the models so they fit in the graphics window.</li>
+        </ol>
+
+        <p>Keyboard Key Functions:</p>
+
+        <ul>
+            <li>F1: Render the point cloud for the bunny model</li>
+            <li>F2: Render the point cloud for the dragon model</li>
+            <li>F3: Render the point cloud for the bear model</li>
+            <li>P/p: Adjust the size of the points</li>
+        </ul>
+    </div>
 </body>
 </html>
