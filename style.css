@@ -25,7 +25,7 @@ nav {
     background: #202225;
     margin: 5%;
     padding: 3%;
-    border-radius: 20px;
+    border-radius: 30px;
 }
 
 .my_name {
@@ -52,6 +52,10 @@ nav {
     text-decoration: none;
 }
 
+.menu_item:hover {
+    color: gray;
+}
+
 .divider {
     background: black;
     height: 5px;
@@ -69,7 +73,7 @@ nav {
    and right arrows) */
 .gallery_container {
     position: relative;
-    margin: auto;
+    margin: 0 25%;
 }
 
 .gallery_img {
@@ -139,12 +143,12 @@ nav {
     opacity: 0.6;
 }
 
-.active, .thumbnail_img:hover {
+.thumbnail_img:hover {
     opacity: 1;
 }
 
 .proj_description {
-    margin: 10px;
+    margin: 30px 0;
 }
 
 /* -------------------------------- */

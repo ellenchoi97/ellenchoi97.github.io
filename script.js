@@ -1,3 +1,6 @@
+var cse167hw1_imgs = ["Assets/CSE167HW1/HW_1_Bunny.gif", "Assets/CSE167HW1/HW_1_Dragon.gif", "Assets/CSE167HW1/HW_1_Bear.gif", "Assets/CSE167HW1/HW_1_Points.gif"];
+
+/* -------------------------------- */
 //index.html
 //Go to the linked page
 export function nextPage(page) {
@@ -19,13 +22,11 @@ function showSlides() {
     var dots = document.getElementsByClassName("thumbnail_img");
     if (slideIndex > slides.length - 1) { slideIndex = 0 }
     if (slideIndex < 0) { slideIndex = slides.length - 1 }
-    for (var i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
     for (var i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
-    slides[slideIndex].style.display = "block";
+    slides[0].src = cse167hw1_imgs[slideIndex];
+    slides[0].style.display = "block";
     dots[slideIndex].className += " active";
     captionText[0].innerHTML = dots[slideIndex].alt;
 }
