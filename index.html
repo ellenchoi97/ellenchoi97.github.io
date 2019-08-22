@@ -4,13 +4,24 @@
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
+    <script type="module">
+        import { initIndex } from './script.js';
+        window.onload = initIndex;
+    </script>
 
     <title>Ellen Choi Portfolio</title>
 </head>
 <body>
-    <h1>Ellen Choi Portfoilo</h1>
+    <header>
+        <h1 class="change_font my_name">ELLEN CHOI</h1>
 
+        <nav>
+            <ul class="nav_bar">
+                <li class="change_font">Projects</li>
+                <li class="change_font">About</li>
+            </ul>
+        </nav>
+    </header>
     <!--
         <span>Sort By:</span>
         <select>
@@ -24,9 +35,9 @@
 
     <details>
         <summary>CSE 167 Substitute</summary>
-        <div class="proj_img" id="167_1_container">
-            <img id="167_1_icon" class="image" src="Assets/CSE167HW1/icon.jpg" />
-            <p id="167_1_text" class="text">Rendering Point Clouds</p>
+        <div class="project" id="167_1_container">
+            <img id="167_1_icon" class="proj_icon" src="Assets/CSE167HW1/icon.jpg" />
+            <span id="167_1_text" class="proj_text">Rendering Point Clouds</span>
         </div>
 
         <a>Homework 2</a>

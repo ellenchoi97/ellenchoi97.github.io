@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <script type="module">
+        import { initGallery } from './script.js';
+        window.onload = initGallery;
+    </script>
+    <title></title>
+</head>
+<body>
+    <!-- Code for image gallery: https://www.w3schools.com/howto/howto_js_slideshow_gallery.asp -->
+    <!-- Container for the image gallery -->
+    <div class="gallery_container gallery">
+
+        <!-- Full-width images with number text -->
+        <div class="slide gallery">
+            <span class="slideNum gallery">1 / 6</span>
+            <img src="Assets/CSE167HW2/Bear_material.jpg" class="gallery_img gallery">
+        </div>
+
+        <div class="slide gallery">
+            <span class="slideNum gallery">2 / 6</span>
+            <img src="Assets/CSE167HW2/Bear_material.jpg" class="gallery_img gallery">
+        </div>
+
+        <div class="slide gallery">
+            <span class="slideNum gallery">3 / 6</span>
+            <img src="Assets/CSE167HW2/Bear_material.jpg" class="gallery_img gallery">
+        </div>
+
+        <div class="slide gallery">
+            <span class="slideNum gallery">4 / 6</span>
+            <img src="Assets/CSE167HW2/Bear_material.jpg" class="gallery_img gallery">
+        </div>
+
+        <div class="slide gallery">
+            <span class="slideNum gallery">5 / 6</span>
+            <img src="Assets/CSE167HW2/Bear_material.jpg" class="gallery_img gallery">
+        </div>
+
+        <div class="slide gallery">
+            <span class="slideNum gallery">6 / 6</span>
+            <img src="Assets/CSE167HW2/Bear_material.jpg" class="gallery_img gallery">
+        </div>
+
+        <!-- Next and previous buttons -->
+        <button class="prev cursor">&#10094;</button>
+        <button class="next cursor">&#10095;</button>
+
+        <!-- Image text -->
+        <p class="caption"></p>
+
+        <!-- Thumbnail images -->
+        <div class="thumbnails">
+            <img class="thumbnail_img cursor" src="Assets/CSE167HW2/Bear_material.jpg" alt="The Woods">
+            <img class="thumbnail_img cursor" src="Assets/CSE167HW2/Bear_material.jpg"  alt="Cinque Terre">
+            <img class="thumbnail_img cursor" src="Assets/CSE167HW2/Bear_material.jpg" alt="Mountains and fjords">
+            <img class="thumbnail_img cursor" src="Assets/CSE167HW2/Bear_material.jpg" alt="Northern Lights">
+            <img class="thumbnail_img cursor" src="Assets/CSE167HW2/Bear_material.jpg" alt="Nature and sunrise">
+            <img class="thumbnail_img cursorr" src="Assets/CSE167HW2/Bear_material.jpg" alt="Snowy Mountains">
+
+        </div>
+    </div>
+</body>
+</html>
