@@ -17,7 +17,8 @@ export function initIndex() {
 var slideIndex = 0;
 
 function showSlides() {
-    var slides = document.getElementsByClassName("slide");
+    var slides = document.getElementsByClassName("gallery_img");
+    var imgNum = document.getElementsByClassName("slideNum");
     var captionText = document.getElementsByClassName("caption");
     var dots = document.getElementsByClassName("thumbnail_img");
     if (slideIndex > slides.length - 1) { slideIndex = 0 }
@@ -27,6 +28,7 @@ function showSlides() {
     }
     slides[0].src = cse167hw1_imgs[slideIndex];
     slides[0].style.display = "block";
+    imgNum.innerHTML = (slideIndex + 1) + " / " + cse167hw1_imgs.length;
     dots[slideIndex].className += " active";
     captionText[0].innerHTML = dots[slideIndex].alt;
 }
