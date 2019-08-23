@@ -11,57 +11,107 @@
     <title>Ellen Choi Portfolio</title>
 </head>
 <body>
-    <!-- Code for image gallery: https://www.w3schools.com/howto/howto_js_slideshow_gallery.asp -->
-    <!-- Container for the image gallery -->
-    <div class="gallery_container gallery">
+    <div class="img_string">Assets/CSE167HW2/Bunny_material.JPG</div>
+    <div class="img_string">Assets/CSE167HW2/Dragon_material.JPG</div>
+    <div class="img_string">Assets/CSE167HW2/Bear_material.JPG</div>
+    <div class="img_string">Assets/CSE167HW2/directional_movement.gif</div>
+    <div class="img_string">Assets/CSE167HW2/pointlight_movement.gif</div>
+    <div class="img_string">Assets/CSE167HW2/spotlight_movement.gif</div>
+    <div class="img_string">Assets/CSE167HW2/spotlight_edge.gif</div>
+    <div class="img_string">Assets/CSE167HW2/spotlight_width.gif</div>
+    <div class="img_string">Assets/CSE167HW2/hw2_scaling.gif</div>
 
-        <!-- Full-width images with number text -->
-        <div class="slide gallery">
-            <span class="slideNum gallery">1 / 6</span>
-            <img src="Assets/CSE167HW2/Bear_material.JPG" class="gallery_img gallery">
+    <header>
+        <div class="grid_main">
+            <h1 class="my_name">ELLEN CHOI</h1>
+
+            <nav>
+                <a class="menu_item" href="index.html">Projects</a>
+                <a class="menu_item" href="index.html">About</a>
+            </nav>
         </div>
 
-        <div class="slide gallery">
-            <span class="slideNum gallery">2 / 6</span>
-            <img src="Assets/CSE167HW2/Bear_material.JPG" class="gallery_img gallery">
+        <div class="divider"></div>
+    </header>
+
+    <div class="background">
+        <h1 class="">3D Models and Lighting</h1>
+        <a href="http://ivl.calit2.net/wiki/index.php/Project2F18">Project Rubric and Directions</a>
+
+        <!-- Code for image gallery: https://www.w3schools.com/howto/howto_js_slideshow_gallery.asp -->
+        <!-- Container for the image gallery -->
+        <div class="gallery_container gallery">
+
+            <!-- Full-width images with number text -->
+            <div class="slide gallery">
+                <span class="slideNum gallery">1 / 4</span>
+                <img src="Assets/CSE167HW2/Bear_material.JPG" class="gallery_img gallery">
+            </div>
+
+            <!-- Next and previous buttons -->
+            <button class="prev cursor">&#10094;</button>
+            <button class="next cursor">&#10095;</button>
+
+            <!-- Image text -->
+            <p class="caption"></p>
+
+            <!-- Thumbnail images -->
+            <div class="thumbnails">
+                <img class="thumbnail_img cursor" src="Assets/CSE167HW2/Bunny_material.JPG" alt="Point cloud rendering for bunny model">
+                <img class="thumbnail_img cursor" src="Assets/CSE167HW2/Dragon_material.JPG" alt="Point cloud rendering for dragon model">
+                <img class="thumbnail_img cursor" src="Assets/CSE167HW2/Bear_material.JPG" alt="Point cloud rendering for bear model">
+                <img class="thumbnail_img cursor" src="Assets/CSE167HW2/directional_movement_icon.JPG" alt="Increasing and decreasing size of points in the point cloud">
+                <img class="thumbnail_img cursor" src="Assets/CSE167HW2/pointlight_movement_icon.JPG" alt="Increasing and decreasing size of points in the point cloud">
+                <img class="thumbnail_img cursor" src="Assets/CSE167HW2/spotlight_movement_icon.JPG" alt="Point cloud rendering for dragon model">
+                <img class="thumbnail_img cursor" src="Assets/CSE167HW2/spotlight_edge_icon.JPG" alt="Point cloud rendering for bear model">
+                <img class="thumbnail_img cursor" src="Assets/CSE167HW2/spotlight_width_icon.JPG" alt="Increasing and decreasing size of points in the point cloud">
+                <img class="thumbnail_img cursor" src="Assets/CSE167HW2/hw2_scaling_icon.JPG" alt="Point cloud rendering for dragon model">
+            </div>
         </div>
 
-        <div class="slide gallery">
-            <span class="slideNum gallery">3 / 6</span>
-            <img src="Assets/CSE167HW2/Bear_material.JPG" class="gallery_img gallery">
-        </div>
+        <div class="proj_description">
+            <p>Goals for this Project:</p>
 
-        <div class="slide gallery">
-            <span class="slideNum gallery">4 / 6</span>
-            <img src="Assets/CSE167HW2/Bear_material.JPG" class="gallery_img gallery">
-        </div>
+            <ol>
+                <li>Parse the faces from the .obj files and display the models with triangles.</li>
+                <li>Use the mouse to rotate and scale the model.</li>
+                <li>
+                    Assign different material properties for each model:
+                    <ul>
+                        <li>Shiny, with no diffuse reflection</li>
+                        <li>No shininess, only uses diffuse reflection</li>
+                        <li>Significant diffuse and specular reflection components</li>
+                    </ul>
+                </li>
+                <li>Create three different light sources: point light, directional light, and spotlight. Render spheres to represent the location and color of the light sources.</li>
+                <li>When a light turns off, it will be fixed in the model space.</li>
+                <li>When a model is scaled, the distance of the lights from the center of the graphics window changes.</li>
+            </ol>
 
-        <div class="slide gallery">
-            <span class="slideNum gallery">5 / 6</span>
-            <img src="Assets/CSE167HW2/Bear_material.JPG" class="gallery_img gallery">
-        </div>
+            <p>Keyboard Key Functions:</p>
 
-        <div class="slide gallery">
-            <span class="slideNum gallery">6 / 6</span>
-            <img src="Assets/CSE167HW2/Bear_material.JPG" class="gallery_img gallery">
-        </div>
+            <ul>
+                <li>F1: Render the bunny model</li>
+                <li>F2: Render the dragon model</li>
+                <li>F3: Render the bear model</li>
+                <li>n: Switch between normal coloring and the Phong illumination model</li>
+                <li>1: Enable/disable point light rotation</li>
+                <li>2: Enable/disable spotlight rotation</li>
+                <li>3: Enable/disable directional light rotation</li>
+                <li>5: Turn the spotlight on/off</li>
+                <li>6: Turn the directional light on/off</li>
+                <li>0: Turn model rotation on/off</li>
+                <li>W/w: The spotlight becomes wider/narrower</li>
+                <li>E/e: The spot edge becomes sharper/blurrier</li>
+            </ul>
 
-        <!-- Next and previous buttons -->
-        <button class="prev cursor">&#10094;</button>
-        <button class="next cursor">&#10095;</button>
+            <p>Mouse Functionality:</p>
 
-        <!-- Image text -->
-        <p class="caption"></p>
-
-        <!-- Thumbnail images -->
-        <div class="thumbnails">
-            <img class="thumbnail_img cursor" src="Assets/CSE167HW2/Bear_material.JPG" alt="The Woods">
-            <img class="thumbnail_img cursor" src="Assets/CSE167HW2/Bear_material.JPG"  alt="Cinque Terre">
-            <img class="thumbnail_img cursor" src="Assets/CSE167HW2/Bear_material.JPG" alt="Mountains and fjords">
-            <img class="thumbnail_img cursor" src="Assets/CSE167HW2/Bear_material.JPG" alt="Northern Lights">
-            <img class="thumbnail_img cursor" src="Assets/CSE167HW2/Bear_material.JPG" alt="Nature and sunrise">
-            <img class="thumbnail_img cursorr" src="Assets/CSE167HW2/Bear_material.JPG" alt="Snowy Mountains">
-
+            <ul>
+                <li>Move the cursor to move the light sources.</li>
+                <li>Hold the left mouse button and move the cursor to rotate the model.</li>
+                <li>Hold the right mouse button and move the cursor up and down to scale the model up and down, respectively.</li>
+            </ul>
         </div>
     </div>
 </body>

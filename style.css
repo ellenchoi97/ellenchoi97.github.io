@@ -64,6 +64,10 @@ nav {
 
 /* -------------------------------- */
 /* All project detail pages */
+.img_string {
+    display:none;
+}
+
 .gallery {
     box-sizing: border-box;
 }

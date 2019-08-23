@@ -1,4 +1,4 @@
-var cse167hw1_imgs = ["Assets/CSE167HW1/HW_1_Bunny.gif", "Assets/CSE167HW1/HW_1_Dragon.gif", "Assets/CSE167HW1/HW_1_Bear.gif", "Assets/CSE167HW1/HW_1_Points.gif"];
+var images;
 
 /* -------------------------------- */
 //index.html
@@ -17,18 +17,19 @@ export function initIndex() {
 var slideIndex = 0;
 
 function showSlides() {
+    images = document.getElementsByClassName("img_string");
     var slides = document.getElementsByClassName("gallery_img");
     var imgNum = document.getElementsByClassName("slideNum");
     var captionText = document.getElementsByClassName("caption");
     var dots = document.getElementsByClassName("thumbnail_img");
-    if (slideIndex > cse167hw1_imgs.length - 1) { slideIndex = 0 }
-    if (slideIndex < 0) { slideIndex = cse167hw1_imgs.length - 1 }
+    if (slideIndex > images.length - 1) { slideIndex = 0 }
+    if (slideIndex < 0) { slideIndex = images.length - 1 }
     for (var i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
-    slides[0].src = cse167hw1_imgs[slideIndex];
+    slides[0].src = images[slideIndex].innerHTML;
     slides[0].style.display = "block";
-    imgNum[0].innerHTML = (slideIndex + 1) + " / " + cse167hw1_imgs.length;
+    imgNum[0].innerHTML = (slideIndex + 1) + " / " + images.length;
     dots[slideIndex].className += " active";
     captionText[0].innerHTML = dots[slideIndex].alt;
 }
