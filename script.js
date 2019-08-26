@@ -30,11 +30,14 @@ function showSlides() {
 
     //Get the index of the first image shown in the thumbnails
     var start;
-    if (slideIndex > images.length - 5) {
-        start = images.length - 5;
+    if (slideIndex > 0 && slideIndex < images.length - 5) {
+        start = slideIndex - 1;
+    }
+    else if (slideIndex == 0) {
+        start = 0;
     }
     else {
-        start = slideIndex;
+        start = images.length - 5;
     }
 
     //For all thumbnail photos
@@ -42,7 +45,7 @@ function showSlides() {
         thumbnails[i].className = thumbnails[i].className.replace(" active", "");
 
         //If the thumbnail is shown
-        if (i >= start && i <= slideIndex + 5) {
+        if (i >= start && i <= start + 5) {
             thumbnails[i].className = thumbnails[i].className.replace(" hide", " show");
         }
 
