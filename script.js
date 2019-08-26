@@ -1,5 +1,3 @@
-var images;
-
 /* -------------------------------- */
 //index.html
 //Go to the linked page
@@ -7,31 +5,55 @@ export function nextPage(page) {
     location.href = page;
 }
 
-//Initialize the onclick functions
+//Add onclick functions to elements
 export function initIndex() {
     document.getElementById("167_1_icon").addEventListener("click", function () { nextPage("cse167_hw1.html") });
+    document.getElementById("167_2_icon").addEventListener("click", function () { nextPage("cse167_hw2.html") });
 }
 
 /* -------------------------------- */
 //All project pages
-var slideIndex = 0;
+var slideIndex = 0;     //The index of the main image
 
 function showSlides() {
-    images = document.getElementsByClassName("img_string");
-    var slides = document.getElementsByClassName("gallery_img");
-    var imgNum = document.getElementsByClassName("slideNum");
-    var captionText = document.getElementsByClassName("caption");
-    var dots = document.getElementsByClassName("thumbnail_img");
+    var images = document.getElementsByClassName("img_string");         //The strings of the images' file locations
+    var slides = document.getElementsByClassName("gallery_img");        //The img element that holds the main image
+    var imgNum = document.getElementsByClassName("slideNum");           //The span element that shows image number
+    var captionText = document.getElementsByClassName("caption");       //The caption for the main image
+    var thumbnails = document.getElementsByClassName("thumbnail_img");  //The img elements for the thumbnail photos
+
+    //If the slide index past the last index, go to index 0
     if (slideIndex > images.length - 1) { slideIndex = 0 }
+
+    //If the slide index is before the first index, go to the last index
     if (slideIndex < 0) { slideIndex = images.length - 1 }
-    for (var i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
+
+    //Get the index of the first image shown in the thumbnails
+    var start;
+    if (slideIndex > images.length - 5) {
+        start = images.length - 5;
     }
-    slides[0].src = images[slideIndex].innerHTML;
-    slides[0].style.display = "block";
-    imgNum[0].innerHTML = (slideIndex + 1) + " / " + images.length;
-    dots[slideIndex].className += " active";
-    captionText[0].innerHTML = dots[slideIndex].alt;
+    else {
+        start = slideIndex;
+    }
+
+    //For all thumbnail photos
+    for (var i = 0; i < thumbnails.length; i++) {
+        //If the thumbnail is shown
+        if (i >= start && i <= slideIndex + 5) {
+            thumbnails[i].className.replace(" hide", "");
+        }
+
+        //If the thumbnail is not shown
+        else {
+            thumbnails[i].className = thumbnails[i].className += " hide";
+        }
+    }
+
+    slides[0].src = images[slideIndex].innerHTML;                       //Change the main photo
+    imgNum[0].innerHTML = (slideIndex + 1) + " / " + images.length;     //Change the photo number text
+    thumbnails[slideIndex].className += " active";                      //Make stylistic changes to selected photo
+    captionText[0].innerHTML = thumbnails[slideIndex].alt;              //Change the caption
 }
 
 // Next/previous controls
