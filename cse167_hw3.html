@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <script type="module">
+        import { initGallery } from './script.js';
+        window.onload = initGallery;
+    </script>
+    <title>Ellen Choi Portfolio</title>
+</head>
+<body>
+    <div class="img_string hide">Assets/CSE167HW3/cull1.gif</div>
+    <div class="img_string hide">Assets/CSE167HW2/cull2.gif</div>
+    <div class="img_string hide">Assets/CSE167HW2/walk_anim.gif</div>
+
+    <header>
+        <div class="grid_main">
+            <h1 class="my_name">ELLEN CHOI</h1>
+
+            <nav>
+                <a class="menu_item" href="index.html">Projects</a>
+                <a class="menu_item" href="index.html">About</a>
+            </nav>
+        </div>
+
+        <div class="divider"></div>
+    </header>
+
+    <div class="background">
+        <h1 class="">Textures, Scene Graphs and Culling</h1>
+        <a href="http://ivl.calit2.net/wiki/index.php/Project3F18">Project Rubric and Directions</a>
+
+        <!-- Code for image gallery: https://www.w3schools.com/howto/howto_js_slideshow_gallery.asp -->
+        <!-- Container for the image gallery -->
+        <div class="gallery_container gallery">
+
+            <!-- Full-width images with number text -->
+            <div class="slide gallery">
+                <span class="slideNum gallery"></span>
+                <img src="" class="gallery_img gallery">
+            </div>
+
+            <!-- Next and previous buttons -->
+            <button class="prev cursor">&#10094;</button>
+            <button class="next cursor">&#10095;</button>
+
+            <!-- Image text -->
+            <p class="caption"></p>
+
+            <!-- Thumbnail images -->
+            <div class="thumbnails">
+                <img class="thumbnail_img cursor show" src="Assets/CSE167HW3/cull1_icon.JPG" alt="Point cloud rendering for bunny model">
+                <img class="thumbnail_img cursor show" src="Assets/CSE167HW3/cull2_icon.JPG" alt="Point cloud rendering for dragon model">
+                <img class="thumbnail_img cursor show" src="Assets/CSE167HW2/walk_anim_icon.JPG" alt="Point cloud rendering for bear model">
+            </div>
+        </div>
+
+        <div class="proj_description">
+            <p>Goals for this Project:</p>
+
+            <ol>
+                <li>Load an image and create a textured 3D object.</li>
+                <li>Implement a scene graph to render a robot object.</li>
+                <li>Animate the robot to make it look like it is walking.</li>
+                <li>Use the scene graph to construct a 2D grid of multiple robots.</li>
+                <li>Create a bounding sphere around each robot and implement view frustum culling. Display the number of robots rendered.</li>
+            </ol>
+
+            <p>Keyboard Key Functions:</p>
+
+            <ul>
+                <li>c: Turn frustum culling on/off</li>
+                <li>f: Freeze/unfreeze the previous culling</li>
+                <li>n: Switch between normal coloring and the Phong illumination model</li>
+                <li>s: Turn bounding sphere rendering on/off</li>
+                <li>Up Arrow: Decrease the FOV (zoom in)</li>
+                <li>Down Arrow: Increase the FOV (zoom out)</li>
+            </ul>
+
+            <p>Mouse Functionality:</p>
+
+            <ul>
+                <li>Hold the left mouse button and move the cursor to rotate the  the camera in place.</li>
+                <li>Hold the right mouse button and move the cursor to rotate the camera around the center of the world.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

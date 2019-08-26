@@ -30,14 +30,14 @@ function showSlides() {
 
     //Get the index of the first image shown in the thumbnails
     var start;
-    if (slideIndex > 0 && slideIndex < images.length - 5) {
+    if (slideIndex > 0 && slideIndex < images.length - 6) {
         start = slideIndex - 1;
     }
     else if (slideIndex == 0) {
         start = 0;
     }
     else {
-        start = images.length - 5;
+        start = images.length - 6;
     }
 
     //For all thumbnail photos
