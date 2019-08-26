@@ -39,14 +39,16 @@ function showSlides() {
 
     //For all thumbnail photos
     for (var i = 0; i < thumbnails.length; i++) {
+        thumbnails[i].className.replace(" active", "");
+
         //If the thumbnail is shown
         if (i >= start && i <= slideIndex + 5) {
-            thumbnails[i].className.replace(" hide", "");
+            thumbnails[i].className.replace(" hide", " show");
         }
 
         //If the thumbnail is not shown
         else {
-            thumbnails[i].className = thumbnails[i].className += " hide";
+            thumbnails[i].className.replace(" show", " hide");
         }
     }
 
