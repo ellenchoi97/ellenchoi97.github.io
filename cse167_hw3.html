@@ -30,7 +30,14 @@
 
     <div class="background">
         <h1 class="">Textures, Scene Graphs and Culling</h1>
-        <a href="http://ivl.calit2.net/wiki/index.php/Project3F18">Project Rubric and Directions</a>
+        <span class="language">C++</span>
+        <span class="language">OpenGL</span>
+
+        <p>
+            This project was the third solo assignment for UCSD's Introduction to Computer Graphics class. It
+            involved implementing a scene graph to render an array of textured models, modifying transformation matrices
+            to create an animation for the models, and implementing view frustum culling.
+        </p>
 
         <!-- Code for image gallery: https://www.w3schools.com/howto/howto_js_slideshow_gallery.asp -->
         <!-- Container for the image gallery -->
@@ -58,11 +65,13 @@
         </div>
 
         <div class="proj_description">
+            <a href="http://ivl.calit2.net/wiki/index.php/Project3F18">Project Rubric and Directions</a>
+
             <p>Goals for this Project:</p>
 
             <ol>
                 <li>Load an image and create a textured 3D object.</li>
-                <li>Implement a scene graph to render a robot object.</li>
+                <li>Implement a scene graph to render a robot object. The scene graph must consist of at least three nodes: Node, Transform, and Geometry.</li>
                 <li>Animate the robot to make it look like it is walking.</li>
                 <li>Use the scene graph to construct a 2D grid of multiple robots.</li>
                 <li>Create a bounding sphere around each robot and implement view frustum culling. Display the number of robots rendered.</li>
