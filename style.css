@@ -170,6 +170,11 @@ nav {
 
 /* -------------------------------- */
 /* index.html */
+#167_grid{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
 .project {
     position: relative;
     width: 300px;

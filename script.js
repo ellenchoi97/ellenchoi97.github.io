@@ -7,6 +7,7 @@ export function nextPage(page) {
 
 //Add onclick functions to elements
 export function initIndex() {
+    document.getElementById("main_title").addEventListener("click", function () { nextPage("index.html") });
     document.getElementById("167_1_icon").addEventListener("click", function () { nextPage("cse167_hw1.html") });
     document.getElementById("167_2_icon").addEventListener("click", function () { nextPage("cse167_hw2.html") });
     document.getElementById("167_3_icon").addEventListener("click", function () { nextPage("cse167_hw3.html") });
