@@ -170,7 +170,7 @@ nav {
 
 /* -------------------------------- */
 /* index.html */
-#167_grid{
+.icon_grid{
     display: grid;
     grid-template-columns: auto auto auto auto;
 }

@@ -76,7 +76,9 @@ export function currentSlide(n) {
     showSlides();
 }
 
-export function initGallery() {
+export function initProjPage() {
+    document.getElementById("main_title").addEventListener("click", function () { nextPage("index.html") });
+
     document.getElementsByClassName("prev")[0].addEventListener("click", function () { plusSlides(-1) });
     document.getElementsByClassName("next")[0].addEventListener("click", function () { plusSlides(1) });
 
