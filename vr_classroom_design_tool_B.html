@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <script type="module">
+        import { initPage } from './script.js';
+        window.onload = initPage;
+    </script>
+    <title>Ellen Choi Portfolio</title>
+</head>
+<body>
+
+    <header>
+        <div class="grid_main">
+            <h1 class="my_name cursor" id="main_title">ELLEN CHOI</h1>
+
+            <nav>
+                <a class="menu_item" href="index.html">Projects</a>
+                <a class="menu_item" href="index.html">About</a>
+            </nav>
+        </div>
+
+        <div class="divider"></div>
+    </header>
+
+    <div class="background">
+        <h1 class="">VR Classroom Design Tool - Travel Methods</h1>
+        <span class="language">Unity</span>
+        <span class="language">C#</span>
+        <span class="language">Oculus Rift</span>
+
+        <p>
+            This project was the third assignment for UCSD's 3D User Interation class and a continuation of the previous assignment 
+            (<a href="vr_classroom_design_tool_A.html">VR Classroom Design Tool - Selection and Manipulation</a>). This part of the project 
+            invovles implementing object selection and
+            manipulation using ray casting.
+        </p>
+
+        <div class="proj_description">
+            <a href="http://ivl.calit2.net/wiki/index.php/Project2bW19">Project Rubric and Directions</a>
+
+            <p>Goals for this Project:</p>
+
+            <ol>
+                <li>Implement a teleportation mode. Display a ray emanating from the right hand controller and an indicator on the floor to allow the user to point to their destination.</li>
+                <li>The teleportation mode changes the user's position immediately, and their orientation stays the same.</li>
+                <li>Implement a walk mode where the user is always on the floor, moves gradually, and they can only rotate around the y (up) axis.</li>
+                <li>
+                    The speed of the motion in walk mode is gradually adjustable depending on the distance of the right hand's controller from its original position.
+                    The same applies to changing the user's orientation.
+                </li>
+                <li>Add a visual display to the left hand controller to indicate which mode is active.</li>
+            </ol>
+
+            <p>Controls:</p>
+
+            <ul>
+                <li>Left Hand Trigger: Toggle between teleport and walk mode</li>
+                <li>Right Hand Trigger: Teleport to the indicated location if in teleport mode, hold and move and turn the controller to walk around the room</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

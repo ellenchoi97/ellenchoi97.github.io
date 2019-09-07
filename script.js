@@ -21,7 +21,9 @@ export function initIndex() {
     document.getElementById("167_3_icon").addEventListener("click", function () { nextPage("textures_scene_graph_and_culling.html") });
     document.getElementById("167_4_icon").addEventListener("click", function () { nextPage("roller_coaster.html") });
     document.getElementById("167_final_icon").addEventListener("click", function () { nextPage("finding_mochi.html") });
+
     document.getElementById("165_1_icon").addEventListener("click", function () { nextPage("trapped_by_a_big_wall.html") });
+    document.getElementById("165_2_icon").addEventListener("click", function () { nextPage("vr_classroom_design_tool_A.html") });
 }
 
 /* -------------------------------- */

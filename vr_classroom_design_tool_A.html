@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <script type="module">
+        import { initPage } from './script.js';
+        window.onload = initPage;
+    </script>
+    <title>Ellen Choi Portfolio</title>
+</head>
+<body>
+
+    <header>
+        <div class="grid_main">
+            <h1 class="my_name cursor" id="main_title">ELLEN CHOI</h1>
+
+            <nav>
+                <a class="menu_item" href="index.html">Projects</a>
+                <a class="menu_item" href="index.html">About</a>
+            </nav>
+        </div>
+
+        <div class="divider"></div>
+    </header>
+
+    <div class="background">
+        <h1 class="">VR Classroom Design Tool - Selection and Manipulation</h1>
+        <span class="language">Unity</span>
+        <span class="language">C#</span>
+        <span class="language">Oculus Rift</span>
+
+        <p>
+            This project was the second assignment for UCSD's 3D User Interation class. The program is an application that helps the user
+            design the layout of the classroom by spawning chairs and desks. The project invovles implementing object selection and 
+            manipulation using ray casting.
+        </p>
+
+        <div class="proj_description">
+            <a href="http://ivl.calit2.net/wiki/index.php/Project2aW19">Project Rubric and Directions</a>
+
+            <p>Goals for this Project:</p>
+
+            <ol>
+                <li>Display a ray emanating from the user's right hand controller, pointing forward like a laser pointer.</li>
+                <li>When the spawn button(A/B) is pressed, an instance of a desk or chair is created.</li>
+                <li>While the user holds down a spawn button, the desk/chair remains on the ray so that it can be positioned and oriented as desired.</li>
+                <li>When a spawn button is released, the desk/chair falls down and comes to rest on the floor or on another piece of furniture.</li>
+                <li>Implement ray casting to select a desk/chair in the room. Highlight the selected piece of furniture.</li>
+                <li>When the trigger button is released, the physics engine makes the furniture should fall down as it does when it is spawned.</li>
+            </ol>
+
+            <p>Controls:</p>
+
+            <ul>
+                <li>A: Spawn a chair at a distance from the user's hand on the ray</li>
+                <li>B: Spawn a desk at a distance from the user's hand on the ray</li>
+                <li>Right Hand Trigger: Hold to move and orient the selected furniture</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
