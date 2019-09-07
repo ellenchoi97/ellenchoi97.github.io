@@ -1,4 +1,11 @@
 /* -------------------------------- */
+//All pages
+
+export function initPage() {
+    document.getElementById("main_title").addEventListener("click", function () { nextPage("index.html") });
+}
+
+/* -------------------------------- */
 //index.html
 //Go to the linked page
 export function nextPage(page) {
@@ -7,12 +14,14 @@ export function nextPage(page) {
 
 //Add onclick functions to elements
 export function initIndex() {
-    document.getElementById("main_title").addEventListener("click", function () { nextPage("index.html") });
-    document.getElementById("167_1_icon").addEventListener("click", function () { nextPage("cse167_hw1.html") });
-    document.getElementById("167_2_icon").addEventListener("click", function () { nextPage("cse167_hw2.html") });
-    document.getElementById("167_3_icon").addEventListener("click", function () { nextPage("cse167_hw3.html") });
-    document.getElementById("167_4_icon").addEventListener("click", function () { nextPage("cse167_hw4.html") });
-    document.getElementById("167_final_icon").addEventListener("click", function () { nextPage("cse167_final.html") });
+    initPage();
+
+    document.getElementById("167_1_icon").addEventListener("click", function () { nextPage("rendering_point_clouds.html") });
+    document.getElementById("167_2_icon").addEventListener("click", function () { nextPage("3d_models_and_lighting.html") });
+    document.getElementById("167_3_icon").addEventListener("click", function () { nextPage("textures_scene_graph_and_culling.html") });
+    document.getElementById("167_4_icon").addEventListener("click", function () { nextPage("roller_coaster.html") });
+    document.getElementById("167_final_icon").addEventListener("click", function () { nextPage("finding_mochi.html") });
+    document.getElementById("165_1_icon").addEventListener("click", function () { nextPage("trapped_by_a_big_wall.html") });
 }
 
 /* -------------------------------- */
@@ -78,7 +87,7 @@ export function currentSlide(n) {
 }
 
 export function initProjPage() {
-    document.getElementById("main_title").addEventListener("click", function () { nextPage("index.html") });
+    initPage();
 
     document.getElementsByClassName("prev")[0].addEventListener("click", function () { plusSlides(-1) });
     document.getElementsByClassName("next")[0].addEventListener("click", function () { plusSlides(1) });

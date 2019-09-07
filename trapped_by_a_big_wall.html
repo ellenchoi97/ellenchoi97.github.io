@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <script type="module">
+        import { initPage } from './script.js';
+        window.onload = initPage;
+    </script>
+    <title>Ellen Choi Portfolio</title>
+</head>
+<body>
+
+    <header>
+        <div class="grid_main">
+            <h1 class="my_name cursor" id="main_title">ELLEN CHOI</h1>
+
+            <nav>
+                <a class="menu_item" href="index.html">Projects</a>
+                <a class="menu_item" href="index.html">About</a>
+            </nav>
+        </div>
+
+        <div class="divider"></div>
+    </header>
+
+    <div class="background">
+        <h1 class="">Trapped By A Big Wall</h1>
+        <span class="language">Unity</span>
+        <span class="language">C#</span>
+        <span class="language">Oculus Rift</span>
+
+        <p>
+            This project was the first assignment for UCSD's 3D User Interation class and was created in collaboration with another student. It
+            involved implementing a skybox, environmental mapping, and C1 continuous Bezier curves.
+        </p>
+
+        <div class="proj_description">
+            <a href="http://ivl.calit2.net/wiki/index.php/Project1W19">Project Rubric and Directions</a>
+
+            <p>Goals for this Project:</p>
+
+            <ol>
+                <li>Create a textured plane to represent the ground.</li>
+                <li>Procedurally generate a cylindrical wall of bricks. Add a texture and apply realistic physics properties to the bricks.</li>
+                <li>
+                    When the user stares at a brick for at least 2 seconds, allow the user to control the brick.
+                    <ul>
+                        <li>Depending on the user's head movement, the brick will move towards the outside or the inside of the wall.</li>
+                        <li>The brick moves parallel to the axis of the radius of the brick cylinder.</li>
+                        <li>The physics simulation makes the bricks above a removed brick tumble down.</li>
+                    </ul>
+                </li>
+                <li>Highlight the brick that is being looked at.</li>
+                <li>Reset the wall when the user looks up to the sky.</li>
+                <li>When the user stares at a brick for at least 7 seconds, explode the brick.</li>
+                <li>Add a radial widget to indicate how much longer the user must stare at a brick to activate movement and explosion.</li>
+
+            </ol>
+        </div>
+    </div>
+</body>
+</html>
