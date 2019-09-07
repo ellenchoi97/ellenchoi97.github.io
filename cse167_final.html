@@ -35,7 +35,13 @@
 
     <div class="background">
         <h1 class="">Finding Mochi</h1>
-        <a href="http://ivl.calit2.net/wiki/index.php/Project4F18">Project Rubric and Directions</a>
+        <span class="language">C++</span>
+        <span class="language">OpenGL</span>
+
+        <p>
+            Finding Mochi is a minigame based on the movie Big Hero 6 where Baymax must navigate through the city to find the cat, Mochi.
+            This project was the final project for UCSD's Introduction to Computer Graphics class and it was created in a team with two other students.
+        </p>
 
         <!-- Code for image gallery: https://www.w3schools.com/howto/howto_js_slideshow_gallery.asp -->
         <!-- Container for the image gallery -->
@@ -68,35 +74,53 @@
         </div>
 
         <div class="proj_description">
-            <p>Goals for this Project:</p>
+            <a href="http://ivl.calit2.net/wiki/index.php/Project5F18">Project Rubric and Directions</a>
 
-            <ol>
-                <li>Draw a cubic skybox.</li>
-                <li>Create 8 Bezier curves to render a roller coaster track.</li>
-                <li>Render the control points, highlighting the interpolating points and the anchor points in different colors.</li>
-                <li>Enforce C1 continuity for neighboring curves.</li>
-                <li>Render a sphere on the track to represent a roller coaster car. Use environment mapping to make the sphere look like polished metal.</li>
-                <li> Move the sphere along the track at a constant velocity.</li>
-            </ol>
+            <p>Technical Features Implemented:</p>
+
+            <ul>
+                <li>Toon shading</li>
+                <li>Surface made with two C1 continuous Bezier patches</li>
+                <li>Collision detection with bounding spheres</li>
+                <li>Procedurally modeled buildings</li>
+                <li>Procedurally modeled buildings</li>
+                <li>Procedurally modeled buildings</li>
+                <li>Procedurally modeled buildings</li>
+                <li>Procedurally modeled city</li>
+                <li>Procedurally generated terrain (diamond-square algorithm)</li>
+                <li>Procedurally generated plants with L-systems</li>
+                <li>Skybox environment</li>
+            </ul>
 
             <p>Keyboard Key Functions:</p>
 
             <ul>
-                <li>p: Freeze/unfreeze the animation</li>
-                <li>x: Change the value of the x coordinate of the selected control point</li>
-                <li>y: Change the value of the y coordinate of the selected control point</li>
-                <li>z: Change the value of the x coordinate of the selected control point</li>
-                <li>Up Arrow: Decrease the FOV (zoom in)</li>
-                <li>Down Arrow: Increase the FOV (zoom out)</li>
-                <li>Left Arrow: Go to the previous control point</li>
-                <li>Right Arrow: Go to the next control point</li>
+                <li>1: Turn the Baymax model on/off</li>
+                <li>2: Turn the Mochi model on/off</li>
+                <li>3: Turn the rendering for the bounding spheres on/off</li>
+                <li>4: Turn the ocean patch on/off</li>
+                <li>5: Turn the terrain on/off</li>
+                <li>6: Turn the city on/off</li>
+                <li>7: Turn the buildings on/off</li>
+                <li>8: Turn the plants on/off</li>
+                <li>9: Turn on/off random relocation if Baymax catches Mochi 0: Turn the testing object on/off</li>
+                <li>C/c: Increase/Decrease the FOV (Zoom Out/Zoom In)</li>
+                <li>o: Toggle between only rendering the ocean path and rendering all models</li>
+                <li>p: Toggle between changing the FOV using C/c and Up/Down</li>
+                <li>r: Change the seed value for the procedurally generated models that are on (ocean patch, terrain, city, building, plants)</li>
+                <li>S/s: Scale the model up/down z: Toggle between changing the value of the y coordinate or the z coordinate</li>
+                <li>Up Arrow: Increase the value of the y coordinate or decrease the value of the z coordinate</li>
+                <li>Down Arrow: Decrease the value of the y coordinate or increase the value of the z coordinate</li>
+                <li>Left Arrow: Decrease the value of the x coordinate for the models that are on</li>
+                <li>Right Arrow: Increase the value of the x coordinate for the models that are on</li>
+                <li>F1: Go to ground view</li>
+                <li>F2: Go to bird's eye view</li>
             </ul>
 
             <p>Mouse Functionality:</p>
 
             <ul>
-                <li>Hold the left mouse button and move the cursor to rotate the  the camera in place.</li>
-                <li>Hold the right mouse button and move the cursor to rotate the camera around the center of the world.</li>
+                <li>Hold the left mouse button and move the cursor to rotate the camera around the center of the world.</li>
             </ul>
         </div>
     </div>
