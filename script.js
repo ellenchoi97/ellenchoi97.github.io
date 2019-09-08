@@ -26,6 +26,9 @@ export function initIndex() {
     document.getElementById("165_2_icon").addEventListener("click", function () { nextPage("vr_classroom_design_tool_A.html") });
     document.getElementById("165_3_icon").addEventListener("click", function () { nextPage("vr_classroom_design_tool_B.html") });
     document.getElementById("165_4_icon").addEventListener("click", function () { nextPage("air_race_over_ucsd.html") });
+    document.getElementById("165_final_icon").addEventListener("click", function () { nextPage("adventure_machine_vr.html") });
+
+    document.getElementById("169_3_icon").addEventListener("click", function () { nextPage("skeleton_skinning_keyframe_animation.html") });
 }
 
 /* -------------------------------- */
