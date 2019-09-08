@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <script type="module">
+        import { initPage } from './script.js';
+        window.onload = initPage;
+    </script>
+    <title>Ellen Choi Portfolio</title>
+</head>
+<body>
+
+    <header>
+        <div class="grid_main">
+            <h1 class="my_name cursor" id="main_title">ELLEN CHOI</h1>
+
+            <nav>
+                <a class="menu_item" href="index.html">Projects</a>
+                <a class="menu_item" href="index.html">About</a>
+            </nav>
+        </div>
+
+        <div class="divider"></div>
+    </header>
+
+    <div class="background">
+        <h1 class="">Air Race Over UCSD</h1>
+        <span class="language">Unity</span>
+        <span class="language">C#</span>
+        <span class="language">Oculus Rift</span>
+        <span class="language">Leap Motion</span>
+
+        <p>
+            This project was the fourth assignment for UCSD's 3D User Interation class and it was a program where the user is inside an "aircraft" and they must control the
+            aircraft to reach all the checkpoints of the given race track. The purpose of the project was to become familiar with coding with the Leap Motion,
+            implementing efficient controls using the Leap Motion, and implementing wayfinding methods.
+        </p>
+
+        <div class="proj_description">
+            <a href="http://ivl.calit2.net/wiki/index.php/Project3W19">Project Rubric and Directions</a>
+
+            <p>Goals for this Project:</p>
+
+            <ol>
+                <li>Write a parser to get the coordinates for the checkpoints for the race track and create a visual representation of the track by drawing the checkpoints.</li>
+                <li>A checkpoint is reached when the aircraft collides with the checkpoint. Implement a visual indication that a checkpoint has been reached (different colored checkpoints).</li>
+                <li>Start at the first checkpoint. Display a countdown timer and do not allow the aircraft to move until the countdown ends.</li>
+                <li>Display a stopwatch once the countdown ends. Stop the stopwatch when all checkpoints have been reached in order.</li>
+                <li>
+                    Implement controls for the aircraft using only data from the Leap Motion.
+                    <ul>
+                        <li>The aircraft cannot teleport anywhere but it may stop and start instantaneously.</li>
+                        <li>Auto pilot is not allowed.</li>
+                    </ul>
+                </li>
+                <li>Implement two different visual methods for wayfinding (arrow indicator and text showing distance remaining).</li>
+                <li>Display the wayfinding visuals in different coordinate spaces (aircraft coordinates and head/Oculus Rift's coordinates).</li>
+
+                <li>If the aircraft collides with the floor or a building, move back to the last successfully cleared checkpoint. Implement a countdown before the aircraft can move again.</li>
+            </ol>
+
+            <p>Aircraft Controls:</p>
+
+            <ul>
+                <li>Thumb Up (Left): Turn to the left</li>
+                <li>Thumb Up (Right): Turn to the right</li>
+                <li>Palm Up (Left or Right, not Both): Move up</li>
+                <li>Palm Down (Left or Right, not Both): Move down</li>
+                <li>Fist (Left, Right, or Both): Move forward</li>
+                <li>Index Finger Extended (Left, Right, or Both): Move backward</li>
+            </ul>
+
+            <p>
+                * Movements can be combined (ex. left thumb up and right palm up lets the user move up and turn left) <br />
+                * If the user has a fist in one hand and an extended index finger in the other, no movement will occur (Cannot move forward and backward).
+            </p>
+        </div>
+    </div>
+</body>
+</html>
