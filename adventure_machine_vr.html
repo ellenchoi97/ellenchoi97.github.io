@@ -30,35 +30,44 @@
         <span class="language">Unity</span>
         <span class="language">C#</span>
         <span class="language">Oculus Rift</span>
-        <span class="language">Leap Motion</span>
 
         <p>
-            This project was the fourth assignment for UCSD's 3D User Interation class and a continuation of the previous assignment
-            (<a href="vr_classroom_design_tool_A.html">VR Classroom Design Tool - Selection and Manipulation</a>). This part of the project
-            invovles implementing two different travel methods, teleportation with ray casting and continuous movement (walk mode).
+            Adventure Machine VR is an application that allows the user to make music with a launchpad and a synthesizer inside an environment that models a bedroom.
+            This project was the final project for UCSD's 3D User Interation class and was created in collaboration with another student.
         </p>
 
-        <div class="proj_description">
-            <a href="http://ivl.calit2.net/wiki/index.php/Project2bW19">Project Rubric and Directions</a>
+        <a href="https://www.youtube.com/watch?v=PXbE9RbXcv0">Link to Video Demo</a>
 
-            <p>Goals for this Project:</p>
+        <div class="proj_description">
+            <a href="http://ivl.calit2.net/wiki/index.php/Project4W19">Project Rubric and Directions</a>
+
+            <p>Technical Features Implemented:</p>
 
             <ol>
-                <li>Implement a teleportation mode. Display a ray emanating from the right hand controller and an indicator on the floor to allow the user to point to their destination.</li>
-                <li>The teleportation mode changes the user's position immediately, and their orientation stays the same.</li>
-                <li>Implement a walk mode where the user is always on the floor, moves gradually, and they can only rotate around the y (up) axis.</li>
-                <li>
-                    The speed of the motion in walk mode is gradually adjustable depending on the distance of the right hand's controller from its original position.
-                    The same applies to changing the user's orientation.
-                </li>
-                <li>Add a visual display to the left hand controller to indicate which mode is active.</li>
+                <li>Object Manipulation (grab with virtual hand)</li>
+                <li>Travel (move by teleportation and move my "grabbing the air")</li>
+                <li>System Control (wrist menu and sound control)</li>
+                <li>Interactive Tutorial</li>      
             </ol>
 
             <p>Controls:</p>
 
             <ul>
-                <li>Left Hand Trigger: Toggle between teleport and walk mode</li>
-                <li>Right Hand Trigger: Teleport to the indicated location if in teleport mode, hold and move or turn the controller to walk around the room</li>
+                <li>Press and hold the left or right hand trigger and have the corresponding virtual hand collide into an object to grab it.</li>
+                <li>"Grab the Air" travel mode: Grab the air and move the controller in the direction opposite of where you want to go.</li>
+                <li>Teleportation travel mode: Point the ray (on the virtual left hand) at the floor and press the left hand trigger to move to the marked spot.</li>
+                <li>Have the virtual hand collide with a launchpad button or synthesizer key to press it, as you would in the real world.
+                    <ul>
+                        <li>This works best when the middle finger rests on top of the hand trigger (not pressing it) so that only the virtual hand's index finger is extended.</li>
+                    </ul>
+                </li>
+                <li>Wrist Menu: Orient the left virtual hand as if looking at a watch. Press the menu items as you would with the launchpad buttons or synthesizer keys.</li>
+                <li>Sound Control: 
+                <ul>
+                    <li>Dials: Grab the dials and turn the virtual hand (around the y axis).</li>
+                    <li>Slider: Grab the handle and move the virtual hand in the desired direction.</li>
+                </ul>
+                </li>
             </ul>
         </div>
     </div>

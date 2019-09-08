@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <script type="module">
+        import { initProjPage } from './script.js';
+        window.onload = initProjPage;
+    </script>
+    <title>Ellen Choi Portfolio</title>
+</head>
+<body>
+    <div class="img_string hide">Assets/CSE167HW4/skybox.gif</div>
+    <div class="img_string hide">Assets/CSE167HW4/track_anim.gif</div>
+    <div class="img_string hide">Assets/CSE167HW4/traverse.gif</div>
+    <div class="img_string hide">Assets/CSE167HW4/change_coord.gif</div>
+
+    <header>
+        <div class="grid_main">
+            <h1 class="my_name cursor" id="main_title">ELLEN CHOI</h1>
+
+            <nav>
+                <a class="menu_item" href="index.html">Projects</a>
+                <a class="menu_item" href="index.html">About</a>
+            </nav>
+        </div>
+
+        <div class="divider"></div>
+    </header>
+
+    <div class="background">
+        <h1 class="">Roller Coaster</h1>
+        <span class="language">C++</span>
+        <span class="language">OpenGL</span>
+
+        <p>
+            This project was the fourth solo assignment for UCSD's Introduction to Computer Graphics class. It
+            involved implementing a skybox, environmental mapping, and C1 continuous Bezier curves.
+        </p>
+
+        <!-- Code for image gallery: https://www.w3schools.com/howto/howto_js_slideshow_gallery.asp -->
+        <!-- Container for the image gallery -->
+        <div class="gallery_container gallery">
+
+            <!-- Full-width images with number text -->
+            <div class="slide gallery">
+                <span class="slideNum gallery"></span>
+                <img src="" class="gallery_img gallery">
+            </div>
+
+            <!-- Next and previous buttons -->
+            <button class="prev cursor">&#10094;</button>
+            <button class="next cursor">&#10095;</button>
+
+            <!-- Image text -->
+            <p class="caption"></p>
+
+            <!-- Thumbnail images -->
+            <div class="thumbnails">
+                <img class="thumbnail_img cursor show" src="Assets/CSE167HW4/skybox_icon.JPG" alt="Different views of the skybox">
+                <img class="thumbnail_img cursor show" src="Assets/CSE167HW4/track_anim_icon.JPG" alt="Animation of the sphere moving on the track">
+                <img class="thumbnail_img cursor show" src="Assets/CSE167HW4/traverse_icon.JPG" alt="Traversing through the control points">
+                <img class="thumbnail_img cursor show" src="Assets/CSE167HW4/change_coord_icon.JPG" alt="Changing the values of the x, y, z coordinates of a control point">
+            </div>
+        </div>
+
+        <div class="proj_description">
+            <a href="http://ivl.calit2.net/wiki/index.php/Project4F18">Project Rubric and Directions</a>
+
+            <p>Goals for this Project:</p>
+
+            <ol>
+                <li>Draw a skybox.</li>
+                <li>Create 8 Bezier curves to render a roller coaster track.</li>
+                <li>Render spheres to represent the locations of the control points, highlighting the interpolating points and the anchor points in different colors.</li>
+                <li>Enforce C1 continuity for neighboring curves.</li>
+                <li>Render a sphere on the track to represent a roller coaster car. Use environment mapping to make the sphere look like polished metal.</li>
+                <li> Move the sphere along the track.</li>
+            </ol>
+
+            <p>Keyboard Key Functions:</p>
+
+            <ul>
+                <li>p: Freeze/unfreeze the animation</li>
+                <li>x: Change the value of the x coordinate of the selected control point</li>
+                <li>y: Change the value of the y coordinate of the selected control point</li>
+                <li>z: Change the value of the x coordinate of the selected control point</li>
+                <li>Up Arrow: Decrease the FOV (zoom in)</li>
+                <li>Down Arrow: Increase the FOV (zoom out)</li>
+                <li>Left Arrow: Go to the previous control point</li>
+                <li>Right Arrow: Go to the next control point</li>
+            </ul>
+
+            <p>Mouse Functionality:</p>
+
+            <ul>
+                <li>Hold the left mouse button and move the cursor to rotate the  the camera in place.</li>
+                <li>Hold the right mouse button and move the cursor to rotate the camera around the center of the world.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
