@@ -7,14 +7,82 @@ export function initPage() {
 
 /* -------------------------------- */
 //index.html
+//Sort the project icons
+function re_sort(view_by) {
+    var ordered = [];   //The list of lists for where icons belong
+    var cat_names;      //The names of the categories
+
+    //Get the icons and the names of the categories
+    if (view_by == "class") {
+        ordered.push(document.getElementsByClassName("cse_167"));
+        ordered.push(document.getElementsByClassName("cse_165"));
+        ordered.push(document.getElementsByClassName("cse_169"));
+        cat_names = ["Introduction to Computer Graphics", "3D User Interaction", "Computer Animation"];
+    }
+    else if (view_by == "prog_lang") {
+        ordered.push(document.getElementsByClassName("opengl"));
+        ordered.push(document.getElementsByClassName("unity"));
+        cat_names = ["OpenGL", "Unity"];
+    }
+
+    //The number of categories
+    var catNum = cat_names.length;        
+
+    //Create basic layout for all view by options
+    //Create div tags for grid layout
+    var icon_grid_div = new Array(catNum);
+    for (var i = 0; i < catNum; i++) {
+        icon_grid_div[i] = document.createElement("div");
+        icon_grid_div[i].className = "icon_grid";
+    }
+
+    //Create summaries for details title
+    var newSummaries = new Array(catNum);
+    for (var i = 0; i < catNum; i++) {
+        newSummaries[i] = document.createElement("summary");
+    }
+
+    //Create details
+    var newCategories = new Array(catNum);
+    for (var i = 0; i < catNum; i++) {
+        newCategories[i] = document.createElement("details");
+        newCategories[i].appendChild(newSummaries[i]);
+        newCategories[i].appendChild(icon_grid_div[i]);
+    }
+
+    //Set the category's name and insert icons
+    for (var i = 0; i < catNum; i++) {
+        newSummaries[i].innerHTML = cat_names[i];
+
+        for (var j = ordered[i].length - 1; j >= 0; j--) {
+            icon_grid_div[i].insertBefore(ordered[i][j], icon_grid_div[i].childNodes[0]);
+        }
+    }
+
+    //Delete existing categories
+    var categories = document.getElementsByClassName("category");
+    for (var i = categories.length - 1; i >= 0; i--) {
+        categories[i].parentElement.removeChild(categories[i]);
+    }
+
+    //Add new categories
+    var theBody = document.getElementsByTagName("body");
+    for (var i = 0; i < newCategories.length; i++) {
+        newCategories.className = "category";
+        theBody[0].appendChild(newCategories[i]);
+    }
+}
+
 //Go to the linked page
-export function nextPage(page) {
+function nextPage(page) {
     location.href = page;
 }
 
 //Add onclick functions to elements
 export function initIndex() {
     initPage();
+
+    document.getElementById("view_by_menu").addEventListener("change", function () { re_sort(document.getElementById("view_by_menu").value) });
 
     document.getElementById("167_1_icon").addEventListener("click", function () { nextPage("rendering_point_clouds.html") });
     document.getElementById("167_2_icon").addEventListener("click", function () { nextPage("3d_models_and_lighting.html") });

@@ -170,6 +170,11 @@ nav {
 
 /* -------------------------------- */
 /* index.html */
+select{
+    background-color: black;
+    border-color: black;
+}
+
 .icon_grid{
     display: grid;
     grid-template-columns: auto auto auto auto;
