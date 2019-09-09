@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <script type="module">
+        import { initProjPage } from './script.js';
+        window.onload = initProjPage;
+    </script>
+    <title>Ellen Choi Portfolio</title>
+</head>
+<body>
+    <div class="img_string hide">Assets/CSE169Images/kinematic_move_x.gif</div>
+    <div class="img_string hide">Assets/CSE169Images/kinematic_move_y.gif</div>
+    <div class="img_string hide">Assets/CSE169Images/kinematic_move_z.gif</div>
+    <div class="img_string hide">Assets/CSE169Images/kine_move_x_2.gif</div>
+    <div class="img_string hide">Assets/CSE169Images/kine_move_y_2.gif</div>
+    <div class="img_string hide">Assets/CSE169Images/kine_move_z_2.gif</div>
+
+    <header>
+        <div class="grid_main">
+            <h1 class="my_name cursor" id="main_title">ELLEN CHOI</h1>
+
+            <nav>
+                <a class="menu_item" href="index.html">Projects</a>
+                <a class="menu_item" href="index.html">About</a>
+            </nav>
+        </div>
+
+        <div class="divider"></div>
+    </header>
+
+    <div class="background">
+        <h1 class="">Inverse Kinematics</h1>
+        <span class="language">C++</span>
+        <span class="language">OpenGL</span>
+
+        <p>
+            This project was the final assignment for UCSD's Computer Animation class. For this project, I implemented
+            inverse kinematics on a chain of six links. Each link has 3 rotational DOFs and are represented by boxes/rectangular prisms.
+        </p>
+
+        <!-- Code for image gallery: https://www.w3schools.com/howto/howto_js_slideshow_gallery.asp -->
+        <!-- Container for the image gallery -->
+        <div class="gallery_container gallery">
+
+            <!-- Full-width images with number text -->
+            <div class="slide gallery">
+                <span class="slideNum gallery"></span>
+                <img src="" class="gallery_img gallery">
+            </div>
+
+            <!-- Next and previous buttons -->
+            <button class="prev cursor">&#10094;</button>
+            <button class="next cursor">&#10095;</button>
+
+            <!-- Image text -->
+            <p class="caption"></p>
+
+            <!-- Thumbnail images -->
+            <div class="thumbnails">
+                <img class="thumbnail_img cursor show" src="Assets/CSE169Images/kinematic_move_x_icon.JPG" alt="Changing the value of the x coordinate for a link further from the fixed point">               
+                <img class="thumbnail_img cursor show" src="Assets/CSE169Images/kinematic_move_y_icon.JPG" alt="Changing the value of the y coordinate for a link further from the fixed point">
+                <img class="thumbnail_img cursor show" src="Assets/CSE169Images/kinematic_move_z_icon.JPG" alt="Changing the value of the z coordinate for a link further from the fixed point">
+                <img class="thumbnail_img cursor show" src="Assets/CSE169Images/kine_move_x_2_icon.JPG" alt="Changing the value of the x coordinate for a link closer from the fixed point">
+                <img class="thumbnail_img cursor show" src="Assets/CSE169Images/kine_move_y_2_icon.JPG" alt="Changing the value of the y coordinate for a link closer from the fixed point">
+                <img class="thumbnail_img cursor show" src="Assets/CSE169Images/kine_move_z_2_icon.JPG" alt="Changing the value of the z coordinate for a link closer from the fixed point">
+            </div>
+        </div>
+
+        <a href="http://cseweb.ucsd.edu/classes/wi19/cse169-a/project5.html">Project Rubric and Directions</a>
+
+        <p>Goals for this Project:</p>
+
+        <ol>
+            <li>Create a chain of 5 or more links, each with at least 1 rotational DOF</li>
+            <li>Implement controls to change the x, y, and z coordinates of the goal position and display the goal position.</li>
+            <li>Use the Jacobian transpose approach to calculate the positions of each joint.</li>
+        </ol>
+
+        <p>Keyboard Key Functions:</p>
+
+        <ul>
+            <li>a: Go to the previous DOF for the goal position(z → y → x)</li>
+            <li>d: Go to the next DOF for the goal position (x → y → z)</li>
+            <li>j: Go to the previous joint</li>
+            <li>k: Go to the next joint</li>
+            <li>s: Decrease the value of the current DOF</li>
+            <li>w: Increase the value of the current DOF</li>
+        </ul>
+
+        <p>Mouse Functionality:</p>
+
+        <ul>
+            <li>Hold the left mouse button and move the cursor left or right to rotate the camera around the center of the world.</li>
+            <li>Hold the right mouse button and move the cursor left or right to change the distance between the camera and the origin.</li>
+        </ul>
+    </div>
+</body>
+</html>
