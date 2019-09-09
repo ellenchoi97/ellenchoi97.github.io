@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <script type="module">
+        import { initProjPage } from './script.js';
+        window.onload = initProjPage;
+    </script>
+    <title>Ellen Choi Portfolio</title>
+</head>
+<body>
+    <div class="img_string hide">Assets/CSE169Images/cloth_move_x.gif</div>
+    <div class="img_string hide">Assets/CSE169Images/cloth_move_y.gif</div>
+    <div class="img_string hide">Assets/CSE169Images/cloth_move_z.gif</div>
+    <div class="img_string hide">Assets/CSE169Images/wind_speed.gif</div>
+    <div class="img_string hide">Assets/CSE169Images/wind_x.gif</div>
+    <div class="img_string hide">Assets/CSE169Images/wind_y.gif</div>
+    <div class="img_string hide">Assets/CSE169Images/wind_z.gif</div>
+
+    <header>
+        <div class="grid_main">
+            <h1 class="my_name cursor" id="main_title">ELLEN CHOI</h1>
+
+            <nav>
+                <a class="menu_item" href="index.html">Projects</a>
+                <a class="menu_item" href="index.html">About</a>
+            </nav>
+        </div>
+
+        <div class="divider"></div>
+    </header>
+
+    <div class="background">
+        <h1 class="">Cloth Simulation</h1>
+        <span class="language">C++</span>
+        <span class="language">OpenGL</span>
+
+        <p>
+            This project was fourth assignment for UCSD's Computer Animation class. The purpose of this project was to simulate
+            a piece of cloth affected by the wind.
+        </p>
+
+        <!-- Code for image gallery: https://www.w3schools.com/howto/howto_js_slideshow_gallery.asp -->
+        <!-- Container for the image gallery -->
+        <div class="gallery_container gallery">
+
+            <!-- Full-width images with number text -->
+            <div class="slide gallery">
+                <span class="slideNum gallery"></span>
+                <img src="" class="gallery_img gallery">
+            </div>
+
+            <!-- Next and previous buttons -->
+            <button class="prev cursor">&#10094;</button>
+            <button class="next cursor">&#10095;</button>
+
+            <!-- Image text -->
+            <p class="caption"></p>
+
+            <!-- Thumbnail images -->
+            <div class="thumbnails">
+                <img class="thumbnail_img cursor show" src="Assets/CSE169Images/cloth_move_x_icon.JPG" alt="Changing the value of the x coordinate for the fixed cloth particles">
+                <img class="thumbnail_img cursor show" src="Assets/CSE169Images/cloth_move_y_icon.JPG" alt="Changing the value of the y coordinate for the fixed cloth particles">
+                <img class="thumbnail_img cursor show" src="Assets/CSE169Images/cloth_move_z_icon.JPG" alt="Changing the value of the z coordinate for the fixed cloth particles">
+                <img class="thumbnail_img cursor show" src="Assets/CSE169Images/wind_speed_icon.JPG" alt="Changing the value of the wind speed">
+                <img class="thumbnail_img cursor show" src="Assets/CSE169Images/wind_x_icon.JPG" alt="Changing the value of the x coordinate for the wind direction">
+                <img class="thumbnail_img cursor show" src="Assets/CSE169Images/wind_y_icon.JPG" alt="Changing the value of the y coordinate for the wind direction">
+                <img class="thumbnail_img cursor show" src="Assets/CSE169Images/wind_z_icon.JPG" alt="Changing the value of the z coordinate for the wind direction">
+            </div>
+        </div>
+
+        <a href="http://cseweb.ucsd.edu/classes/wi19/cse169-a/project4.html">Project Rubric and Directions</a>
+
+        <p>Goals for this Project:</p>
+
+        <ol>
+            <li>Simulate a piece of cloth using particles, spring-dampers, and triangular surfaces.
+                <ul>
+                    <li>The cloth should include the effects of uniform gravity, spring elasticity, and damping.</li>
+                </ul>
+            </li>
+            <li>Add a plane below the cloth and enforce a simple ground plane collision when the cloth touches the plane.</li>
+            <li>Add "wind" and include the effects of aerodynamic drag to the cloth.</li>
+            <li>Add controls to move the fixed cloth particles and the wind's speed and direction.</li>
+        </ol>
+
+        <p>Keyboard Key Functions:</p>
+
+        <ul>
+            <li>a: Go to the previous DOF for the wind direction (z → y → x)</li>
+            <li>d: Go to the next DOF for the wind direction (x → y → z)</li>
+            <li>i: Increase value of the current DOF for the fixed particles</li>
+            <li>j: Go to the previous DOF for the fixed particles (z → y → x)</li>
+            <li>k: Decrease the value of the current DOF for the fixed particles</li>
+            <li>l: Go to the next DOF for the fixed particles (x → y → z)</li>
+            <li>s: Decrease the value of the current DOF for the wind direction</li>
+            <li>S: Decrease the value of the wind speed</li>
+            <li>w: Increase the value of the current DOF for the wind direction</li>
+            <li>W: Increase the value of the wind speed</li>
+        </ul>
+
+        <p>Mouse Functionality:</p>
+
+        <ul>
+            <li>Hold the left mouse button and move the cursor left or right to rotate the camera around the center of the world.</li>
+            <li>Hold the right mouse button and move the cursor left or right to change the distance between the camera and the origin.</li>
+        </ul>
+    </div>
+</body>
+</html>
