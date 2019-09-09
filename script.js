@@ -29,6 +29,8 @@ export function initIndex() {
     document.getElementById("165_final_icon").addEventListener("click", function () { nextPage("adventure_machine_vr.html") });
 
     document.getElementById("169_3_icon").addEventListener("click", function () { nextPage("skeleton_skinning_keyframe_animation.html") });
+    document.getElementById("169_4_icon").addEventListener("click", function () { nextPage("cloth_simulation.html") });
+    document.getElementById("169_5_icon").addEventListener("click", function () { nextPage("inverse_kinematics.html") });
 }
 
 /* -------------------------------- */
