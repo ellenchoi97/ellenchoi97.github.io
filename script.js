@@ -68,7 +68,7 @@ function re_sort(view_by) {
     //Add new categories
     var theBody = document.getElementsByTagName("body");
     for (var i = 0; i < newCategories.length; i++) {
-        newCategories.className = "category";
+        newCategories[i].className = "category";
         theBody[0].appendChild(newCategories[i]);
     }
 }
