@@ -124,7 +124,7 @@ function showSlides() {
 
     //Get the index of the first image shown in the thumbnails
     var start;
-    if (slideIndex > 0 && slideIndex < images.length - 6) {
+    if (slideIndex > 0 && slideIndex < images.length - 5) {
         start = slideIndex - 1;
     }
     else if (slideIndex == 0) {
