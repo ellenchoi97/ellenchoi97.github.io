@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <script type="module">
+        import { initProjPage } from './script.js';
+        window.onload = initProjPage;
+    </script>
+    <title>Ellen Choi Portfolio</title>
+</head>
+<body>
+    <div class="img_string hide">Assets/CSE134BImages/create_account.gif</div>
+    <div class="img_string hide">Assets/CSE134BImages/login.gif</div>
+    <div class="img_string hide">Assets/CSE134BImages/view_meme.gif</div>
+    <div class="img_string hide">Assets/CSE134BImages/add_meme.gif</div>
+    <div class="img_string hide">Assets/CSE134BImages/edit_meme.gif</div>
+    <div class="img_string hide">Assets/CSE134BImages/delete_meme.gif</div>
+    <div class="img_string hide">Assets/CSE134BImages/download_meme.gif</div>
+    <div class="img_string hide">Assets/CSE134BImages/get_link.gif</div>
+
+    <header>
+        <div class="grid_main">
+            <h1 class="my_name cursor" id="main_title">ELLEN CHOI</h1>
+
+            <nav>
+                <a class="menu_item" href="index.html">Projects</a>
+                <a class="menu_item" href="index.html">About</a>
+            </nav>
+        </div>
+
+        <div class="divider"></div>
+    </header>
+
+    <div class="background">
+        <h1 class="">MemeMaster</h1>
+        <span class="language">HTML</span>
+        <span class="language">CSS</span>
+        <span class="language">JavaScript</span>
+
+        <p>MemeMaster is a web application that allows the user to create, edit, share, and delete memes. This project also uses Google Firebase as its storage database.</p>
+
+        <a href="https://cse-134b-final-project.firebaseapp.com/login.html">Link to Web Application</a>
+
+        <!-- Code for image gallery: https://www.w3schools.com/howto/howto_js_slideshow_gallery.asp -->
+        <!-- Container for the image gallery -->
+        <div class="gallery_container gallery">
+
+            <!-- Full-width images with number text -->
+            <div class="slide gallery">
+                <span class="slideNum gallery"></span>
+                <img src="" class="gallery_img gallery">
+            </div>
+
+            <!-- Next and previous buttons -->
+            <button class="prev cursor">&#10094;</button>
+            <button class="next cursor">&#10095;</button>
+
+            <!-- Image text -->
+            <p class="caption"></p>
+
+            <!-- Thumbnail images -->
+            <div class="thumbnails">
+                <img class="thumbnail_img cursor show" src="Assets/CSE134BImages/create_account_icon.JPG" alt="Regeneration of Bezier patches">
+                <img class="thumbnail_img cursor show" src="Assets/CSE134BImages/login_icon.JPG" alt="Regeneration of terrain with different randomizer seed values (top view)">
+                <img class="thumbnail_img cursor show" src="Assets/CSE134BImages/view_meme_icon.JPG" alt="Regeneration of terrain with different randomizer seed values (side view)">
+                <img class="thumbnail_img cursor show" src="Assets/CSE134BImages/add_meme_icon.JPG" alt="Regeneration of L-system plants with different randomizer seed values">
+                <img class="thumbnail_img cursor show" src="Assets/CSE134BImages/edit_meme_icon.JPG" alt="Regeneration of city with different randomizer seed values">
+                <img class="thumbnail_img cursor show" src="Assets/CSE134BImages/delete_meme_icon.JPG" alt="Regeneration of buildings with different randomizer seed values">
+                <img class="thumbnail_img cursor show" src="Assets/CSE134BImages/download_meme_icon.JPG" alt="Collision spheres on Baymax and Mochi">
+                <img class="thumbnail_img cursor show" src="Assets/CSE134BImages/get_link_icon.JPG" alt="Relocating Mochi to a random position in the city">
+            </div>
+        </div>
+
+        <div class="proj_description">
+            <a href="http://ivl.calit2.net/wiki/index.php/Project5F18">Project Rubric and Directions</a>
+
+            <p>Goals for this Project:</p>
+
+            <ul>
+                <li>Toon shading</li>
+                <li>Surface made with two C1 continuous Bezier patches</li>
+                <li>Collision detection with bounding spheres</li>
+                <li>Procedurally modeled buildings</li>
+                <li>Procedurally modeled buildings</li>
+                <li>Procedurally modeled buildings</li>
+                <li>Procedurally modeled buildings</li>
+                <li>Procedurally modeled city</li>
+                <li>Procedurally generated terrain (diamond-square algorithm)</li>
+                <li>Procedurally generated plants with L-systems</li>
+                <li>Skybox environment</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
