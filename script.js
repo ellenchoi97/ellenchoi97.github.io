@@ -14,15 +14,17 @@ function re_sort(view_by) {
 
     //Get the icons and the names of the categories
     if (view_by == "class") {
+        ordered.push(document.getElementsByClassName("cse_134b"));
         ordered.push(document.getElementsByClassName("cse_167"));
         ordered.push(document.getElementsByClassName("cse_165"));
         ordered.push(document.getElementsByClassName("cse_169"));
-        cat_names = ["Introduction to Computer Graphics", "3D User Interaction", "Computer Animation"];
+        cat_names = ["Web Client Languages", "Introduction to Computer Graphics", "3D User Interaction", "Computer Animation"];
     }
     else if (view_by == "prog_lang") {
+        ordered.push(document.getElementsByClassName("html"));
         ordered.push(document.getElementsByClassName("opengl"));
         ordered.push(document.getElementsByClassName("unity"));
-        cat_names = ["OpenGL", "Unity"];
+        cat_names = ["HTML/CSS/JavaScript", "OpenGL", "Unity"];
     }
 
     //The number of categories
@@ -83,6 +85,8 @@ export function initIndex() {
     initPage();
 
     document.getElementById("view_by_menu").addEventListener("change", function () { re_sort(document.getElementById("view_by_menu").value) });
+
+    document.getElementById("134b_final_icon").addEventListener("click", function () { nextPage("meme_master.html") });
 
     document.getElementById("167_1_icon").addEventListener("click", function () { nextPage("rendering_point_clouds.html") });
     document.getElementById("167_2_icon").addEventListener("click", function () { nextPage("3d_models_and_lighting.html") });
