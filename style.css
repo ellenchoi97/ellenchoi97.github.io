@@ -224,6 +224,14 @@ footer {
     justify-content: center;
 }
 
+.section_title {
+    font-size: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    text-align: center;
+}
+
 .icon_grid{
     display: grid;
     grid-template-columns: auto auto auto auto;
@@ -278,10 +286,13 @@ footer {
     background-color: black;
 }
 
-#top_projects{
+#top_projects {
     display: grid;
     grid-template-columns: auto auto auto;
-    margin-left: 20px;
+    grid-column-gap: 20px;
+    margin: 50px 0px;
+    align-items: center;
+    justify-content: center;
 }
 
 #all_projects {

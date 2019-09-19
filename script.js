@@ -1,10 +1,9 @@
 /* -------------------------------- */
 //All pages
-var goToProj = 0;
 export function initPage() {
     document.getElementById("main_title").addEventListener("click", function () { nextPage("index.html"); });
-    document.getElementById("all_proj").addEventListener("click", function () { goToProj = 1; });
-    document.getElementById("about").addEventListener("click", function () { goToProj = 2; });
+    document.getElementById("all_proj").addEventListener("click", function () { sessionStorage.setItem("jumpTo", 1); });
+    document.getElementById("about").addEventListener("click", function () { sessionStorage.setItem("jumpTo", 1); });
 }
 
 /* -------------------------------- */
@@ -70,7 +69,7 @@ function re_sort(view_by) {
     }
 
     //Add new categories
-    var theBody = document.getElementId("all_projects");
+    var theBody = document.getElementById("all_projects");
     for (var i = 0; i < newCategories.length; i++) {
         newCategories[i].className = "category";
         theBody[0].appendChild(newCategories[i]);
@@ -86,6 +85,7 @@ function nextPage(page) {
 export function initIndex() {
     initPage();
 
+    var goToProj = sessionStorage.getItem("jumpTo");
     if (goToProj == 1) {
         window.scrollTo(0, 350);
     }
