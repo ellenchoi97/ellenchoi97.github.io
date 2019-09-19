@@ -87,12 +87,12 @@ export function initIndex() {
 
     var goToProj = sessionStorage.getItem("jumpTo");
     if (goToProj == 1) {
-        var coord = document.getElementById("body_divider").getBoundingClientRect() - document.getElementsByTagName("header")[0].offsetHeight;
-        window.scrollTo(0, coord.y);
+        var coord = document.getElementById("body_divider").getBoundingClientRect().y - document.getElementsByTagName("header")[0].offsetHeight;
+        window.scrollTo(0, coord);
     }
     else if (goToProj == 2) {
-        var coord = document.getElementsByTagName("footer")[0].getBoundingClientRect() - document.getElementsByTagName("header")[0].offsetHeight;
-        window.scrollTo(0, coord.y);
+        var coord = document.getElementsByTagName("footer")[0].getBoundingClientRect().y - document.getElementsByTagName("header")[0].offsetHeight;
+        window.scrollTo(0, coord);
     }
     sessionStorage.removeItem("jumpTo");
 
