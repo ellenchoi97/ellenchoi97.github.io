@@ -72,7 +72,7 @@ function re_sort(view_by) {
     var theBody = document.getElementById("all_projects");
     for (var i = 0; i < newCategories.length; i++) {
         newCategories[i].className = "category";
-        theBody[0].appendChild(newCategories[i]);
+        theBody.appendChild(newCategories[i]);
     }
 }
 

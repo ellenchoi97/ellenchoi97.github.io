@@ -17,12 +17,21 @@
             <h1 class="my_name cursor" id="main_title">ELLEN CHOI</h1>
 
             <nav>
-                <a class="menu_item" href="index.html">Projects</a>
-                <a class="menu_item" href="index.html">About</a>
+                <div class="dropdown">
+                    <a class="menu_item" id="proj_button" href="index.html">Projects</a>
+
+                    <ol class="project_options">
+                        <li><a id="feature" class="menu_item" href="index.html">Featured Projects</a></li>
+                        <li><a id="all_proj" class="menu_item" href="index.html">All Projects</a></li>
+                    </ol>
+                </div>
+
+
+                <a id="about" class="menu_item" href="index.html">About</a>
             </nav>
         </div>
 
-        <div class="divider"></div>
+        <hr id="header_divider" />
     </header>
 
     <div class="background">
