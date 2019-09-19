@@ -116,7 +116,7 @@ export function initIndex() {
     document.getElementById("169_4_icon").addEventListener("click", function () { nextPage("cloth_simulation.html") });
     document.getElementById("169_5_icon").addEventListener("click", function () { nextPage("inverse_kinematics.html") });
 
-    document.getElementById("resume").addEventListener("click", function () { nextPage("Asset/Ellen_Choi_Resume.pdf") });
+    document.getElementById("resume").addEventListener("click", function () { nextPage("Assets/Ellen_Choi_Resume.pdf") });
 }
 
 /* -------------------------------- */
