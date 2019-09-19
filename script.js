@@ -25,7 +25,7 @@ function re_sort(view_by) {
         ordered.push(document.getElementsByClassName("html"));
         ordered.push(document.getElementsByClassName("opengl"));
         ordered.push(document.getElementsByClassName("unity"));
-        cat_names = ["HTML/CSS/JavaScript", "OpenGL", "Unity"];
+        cat_names = ["HTML/CSS/JavaScript", "C++/OpenGL", "C#/Unity"];
     }
 
     //The number of categories
