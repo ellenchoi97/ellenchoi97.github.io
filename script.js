@@ -1,8 +1,10 @@
 /* -------------------------------- */
 //All pages
-
+var goToProj = 0;
 export function initPage() {
-    document.getElementById("main_title").addEventListener("click", function () { nextPage("index.html") });
+    document.getElementById("main_title").addEventListener("click", function () { nextPage("index.html"); });
+    document.getElementById("all_proj").addEventListener("click", function () { goToProj = 1; });
+    document.getElementById("about").addEventListener("click", function () { goToProj = 2; });
 }
 
 /* -------------------------------- */
@@ -68,7 +70,7 @@ function re_sort(view_by) {
     }
 
     //Add new categories
-    var theBody = document.getElementsByTagName("body");
+    var theBody = document.getElementId("all_projects");
     for (var i = 0; i < newCategories.length; i++) {
         newCategories[i].className = "category";
         theBody[0].appendChild(newCategories[i]);
@@ -83,6 +85,14 @@ function nextPage(page) {
 //Add onclick functions to elements
 export function initIndex() {
     initPage();
+
+    if (goToProj == 1) {
+        window.scrollTo(0, 350);
+    }
+    else if (goToProj == 2) {
+        window.scrollTo(0, 730);
+    }
+    goToProj = 0;
 
     document.getElementById("view_by_menu").addEventListener("change", function () { re_sort(document.getElementById("view_by_menu").value) });
 
@@ -103,6 +113,8 @@ export function initIndex() {
     document.getElementById("169_3_icon").addEventListener("click", function () { nextPage("skeleton_skinning_keyframe_animation.html") });
     document.getElementById("169_4_icon").addEventListener("click", function () { nextPage("cloth_simulation.html") });
     document.getElementById("169_5_icon").addEventListener("click", function () { nextPage("inverse_kinematics.html") });
+
+    document.getElementById("resume").addEventListener("click", function () { nextPage("Asset/Ellen_Choi_Resume.pdf") });
 }
 
 /* -------------------------------- */

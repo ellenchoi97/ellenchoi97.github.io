@@ -52,8 +52,32 @@ nav {
     text-decoration: none;
 }
 
-.menu_item:hover {
+.dropdown:hover #proj_button, .menu_item:hover {
     color: gray;
+}
+
+.dropdown {
+    display: inline-block;
+}
+
+.dropdown:hover .project_options, .project_options:hover {
+    display: block;
+}
+
+.project_options {
+    list-style: none;
+    display: none;
+    position: absolute;
+    background-color: #212529;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 5px;
+    margin: 8px;
+}
+
+.project_options li{
+    width: max-content;
+    padding: 2px;
+    text-align: left;
 }
 
 .divider {
@@ -170,9 +194,34 @@ nav {
 
 /* -------------------------------- */
 /* index.html */
-select{
+select {
+    padding: 2px;
     background-color: black;
     border-color: black;
+}
+
+details {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+footer {
+    border: thin;
+    border-style: solid;
+    border-color: black;
+    border-radius: 10px;
+    background-color: #32383e;
+    text-align: center;
+    padding: 20px;
+    margin: 200px 0 50px 50%;
+    left: 50%;
+    transform: translate(-50%);
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: 50% 50%;
+    grid-column-gap: 10px;
+    grid-template-areas: "header header" ". resume" "email email" "language software";
+    justify-content: center;
 }
 
 .icon_grid{
@@ -210,4 +259,76 @@ select{
     text-align: center;
     opacity: 0;
     transition: .5s ease;
+}
+
+.about_description_title {
+    border-bottom: solid;
+    border-bottom-color: black;
+    padding-bottom: 5px;
+    margin: 5px 0px;
+}
+
+.about_description{
+    margin: 10px 0px;
+}
+
+#header_divider {
+    height: 7px;
+    border: none;
+    background-color: black;
+}
+
+#top_projects{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin-left: 20px;
+}
+
+#all_projects {
+    margin: 30px 0 0 30px;
+}
+
+#proj_categories {
+    margin-top: 10px;
+}
+
+#select_description {
+    font-size: 14px;
+}
+
+#body_divider {
+    height: 3px;
+    border: none;
+    background-color: #0f1115;
+}
+
+#footer_title {
+    grid-area: header;
+}
+
+#resume {
+    grid-area: resume;
+    width: 25px;
+    background-color: #ff1919;
+    border-style: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    transform: translateX(-25px);
+    box-sizing: content-box;
+}
+
+#email {
+    grid-area: email;
+}
+
+#about_languages {
+    grid-area: language;
+    border: solid;
+    border-color: black;
+}
+
+#about_software {
+    grid-area: software;
+    border: solid;
+    border-color: black;
 }
