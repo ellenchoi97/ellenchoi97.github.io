@@ -1,7 +1,9 @@
 /* -------------------------------- */
 //All pages
 export function initPage() {
-    document.getElementById("main_title").addEventListener("click", function () { nextPage("index.html"); });
+    document.getElementById('project_options').style.right = document.getElementById('about').style.width;
+
+    document.getElementById("my_name").addEventListener("click", function () { nextPage("index.html"); });
     document.getElementById("all_proj").addEventListener("click", function () { sessionStorage.setItem("jumpTo", 1); });
     document.getElementById("about").addEventListener("click", function () { sessionStorage.setItem("jumpTo", 2); });
 }

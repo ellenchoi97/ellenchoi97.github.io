@@ -5,169 +5,174 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="style.css" />
     <script type="module">
-            import { initIndex } from './script.js';
-            window.onload = initIndex;
+        import { initIndex } from './script.js';
+        window.onload = initIndex;
     </script>
     <title>Ellen Choi Portfolio</title>
 </head>
-<body>
+<body onload="document.getElementById('top_projects').className += 'loaded';">
     <header>
-        <div class="grid_main">
-            <h1 class="my_name cursor" id="main_title">ELLEN CHOI</h1>
+        <div id="grid_main">
+            <h1 id="my_name" class="cursor">ELLEN CHOI</h1>
 
             <nav>
-                <div class="dropdown">
-                    <a class="menu_item" id="proj_button" href="index.html">Projects</a>
+                <a id="proj_button" class="menu_item" href="index.html">Projects</a>
 
-                    <ol class="project_options">
-                        <li><a id="feature" class="menu_item" href="index.html">Featured Projects</a></li>
-                        <li><a id="all_proj" class="menu_item" href="index.html">All Projects</a></li>
-                    </ol>
-                </div>
-                
+                <ol id="project_options">
+                    <li><a class="menu_item" href="index.html">Featured Projects</a></li>
+                    <li><a class="menu_item" href="index.html">All Projects</a></li>
+                </ol>
 
                 <a id="about" class="menu_item" href="index.html">About</a>
             </nav>
         </div>
-
-        <hr id="header_divider" />
     </header>
 
-    <h2 class="section_title">Featured Projects</h2>
+    <div id="full_page">
+        <h2 class="section_title">Featured Projects</h2>
 
-    <div id="top_projects">
-        <div class="project cursor">
-            <img id="134b_final_icon" class="proj_icon" src="Assets/CSE134BImages/icon.JPG" />
-            <a href="meme_master.html" class="proj_text">MemeMaster</a>
-        </div>
+        <div id="top_projects">
+            <div class="project cursor">
+                <img id="134b_final_icon" class="proj_icon" src="Assets/CSE134BImages/icon.JPG" />
+                <a class="proj_text" href="meme_master.html">MemeMaster</a>
+            </div>
 
-        <div class="project cursor">
-            <img id="167_final_icon" class="proj_icon" src="Assets/CSE167Final/icon.JPG" />
-            <a href="finding_mochi.html" class="proj_text">Finding Mochi</a>
-        </div>
+            <div class="project cursor">
+                <img id="167_final_icon" class="proj_icon" src="Assets/CSE167Final/icon.JPG" />
+                <a class="proj_text" href="finding_mochi.html">Finding Mochi</a>
+            </div>
 
-        <div class="project cursor">
-            <img id="165_final_icon" class="proj_icon" src="Assets/CSE165Images/165final_icon.JPG" />
-            <a href="adventure_machine_vr.html" class="proj_text">Adventure Machine VR</a>
+            <div class="project cursor">
+                <img id="165_final_icon" class="proj_icon" src="Assets/CSE165Images/165final_icon.JPG" />
+                <a class="proj_text" href="adventure_machine_vr.html">Adventure Machine VR</a>
+            </div>
         </div>
     </div>
 
-    <hr id="body_divider" />
+    <hr />
 
-    <h2 class="section_title">All Projects</h2>
+    <div id="projects_section">
+        <h2 class="section_title">All Projects</h2>
 
-    <div id="all_projects">
-        <div id="proj_categories">
-            <span id="select_description">View By:</span>
-            <select id="view_by_menu">
-                <option value="class">Project Was Created For</option>
-                <option value="prog_lang">Programming Language</option>
-            </select>
-        </div>
+        <div id="all_projects">
+            <div id="proj_categories">
+                <span id="select_description">View By:</span>
+                <select id="view_by_menu">
+                    <option value="class">Project Was Created For</option>
+                    <option value="prog_lang">Programming Language</option>
+                </select>
+            </div>
 
-        <details class="category">
-            <summary>Web Client Languages</summary>
             <div class="icon_grid">
                 <div class="project cursor html cse_134b">
                     <img id="134b_final_icon" class="proj_icon" src="Assets/CSE134BImages/icon.JPG" />
-                    <a href="meme_master.html" class="proj_text">MemeMaster</a>
+                    <a class="proj_text" href="meme_master.html">MemeMaster</a>
                 </div>
-            </div>
-        </details>
 
-        <details class="category">
-            <summary>Introduction to Computer Graphics</summary>
-            <div class="icon_grid">
                 <div class="project cursor opengl cse_167">
                     <img id="167_1_icon" class="proj_icon" src="Assets/CSE167HW1/icon.JPG" />
-                    <a href="rendering_point_clouds.html" class="proj_text">Rendering Point Clouds</a>
+                    <a class="proj_text" href="rendering_point_clouds.html">Rendering Point Clouds</a>
                 </div>
 
                 <div class="project cursor opengl cse_167">
                     <img id="167_2_icon" class="proj_icon" src="Assets/CSE167HW2/icon.JPG" />
-                    <a href="3d_models_and_lighting.html" class="proj_text">3D Models and Lighting</a>
+                    <a class="proj_text" href="3d_models_and_lighting.html">3D Models and Lighting</a>
                 </div>
 
                 <div class="project cursor opengl cse_167">
                     <img id="167_3_icon" class="proj_icon" src="Assets/CSE167HW3/icon.JPG" />
-                    <a href="textures_scene_graph_and_culling.html" class="proj_text">Textures, Scene Graphs and Culling</a>
+                    <a class="proj_text" href="textures_scene_graph_and_culling.html">Textures, Scene Graphs and Culling</a>
                 </div>
 
                 <div class="project cursor opengl cse_167">
                     <img id="167_4_icon" class="proj_icon" src="Assets/CSE167HW4/icon.JPG" />
-                    <a href="roller_coaster.html" class="proj_text">Roller Coaster</a>
+                    <a class="proj_text" href="roller_coaster.html">Roller Coaster</a>
                 </div>
 
                 <div class="project cursor opengl cse_167">
                     <img id="167_final_icon" class="proj_icon" src="Assets/CSE167Final/icon.JPG" />
-                    <a href="finding_mochi.html" class="proj_text">Finding Mochi</a>
+                    <a class="proj_text" href="finding_mochi.html">Finding Mochi</a>
                 </div>
-            </div>
-        </details>
 
-        <details class="category">
-            <summary>3D User Interaction</summary>
-            <div class="icon_grid">
                 <div class="project cursor unity cse_165">
                     <img id="165_1_icon" class="proj_icon" src="Assets/CSE165Images/165hw1_icon.JPG" />
-                    <a href="trapped_by_a_big_wall.html" class="proj_text">Trapped By A Big Wall</a>
+                    <a class="proj_text" href="trapped_by_a_big_wall.html">Trapped By A Big Wall</a>
                 </div>
 
                 <div class="project cursor unity cse_165">
                     <img id="165_2_icon" class="proj_icon" src="Assets/CSE165Images/165hw2_icon.JPG" />
-                    <a href="vr_classroom_design_tool_A.html" class="proj_text">VR Classroom Design Tool - Selection and Manipulation</a>
+                    <a class="proj_text" href="vr_classroom_design_tool_A.html">VR Classroom Design Tool - Selection and Manipulation</a>
                 </div>
 
                 <div class="project cursor unity cse_165">
                     <img id="165_3_icon" class="proj_icon" src="Assets/CSE165Images/165hw3_icon.JPG" />
-                    <a href="vr_classroom_design_tool_B.html" class="proj_text">VR Classroom Design Tool - Travel Methods</a>
+                    <a class="proj_text" href="vr_classroom_design_tool_B.html">VR Classroom Design Tool - Travel Methods</a>
                 </div>
 
                 <div class="project cursor unity cse_165">
                     <img id="165_4_icon" class="proj_icon" src="Assets/CSE165Images/165hw4_icon.JPG" />
-                    <a href="air_race_over_ucsd.html" class="proj_text">Air Race Over UCSD</a>
+                    <a class="proj_text" href="air_race_over_ucsd.html">Air Race Over UCSD</a>
                 </div>
 
                 <div class="project cursor unity cse_165">
                     <img id="165_final_icon" class="proj_icon" src="Assets/CSE165Images/165final_icon.JPG" />
-                    <a href="adventure_machine_vr.html" class="proj_text">Adventure Machine VR</a>
+                    <a class="proj_text" href="adventure_machine_vr.html">Adventure Machine VR</a>
                 </div>
-            </div>
-        </details>
 
-        <details class="category">
-            <summary>Computer Animation</summary>
-            <div class="icon_grid">
                 <div class="project cursor opengl cse_169">
                     <img id="169_3_icon" class="proj_icon" src="Assets/CSE169Images/169hw3_icon.JPG" />
-                    <a href="skeleton_skinning_keyframe_animation.html" class="proj_text">Skeleton, Skinning, and Keyframe Animation</a>
+                    <a class="proj_text" href="skeleton_skinning_keyframe_animation.html">Skeleton, Skinning, and Keyframe Animation</a>
                 </div>
 
                 <div class="project cursor opengl cse_169">
                     <img id="169_4_icon" class="proj_icon" src="Assets/CSE169Images/169hw4_icon.JPG" />
-                    <a href="cloth_simulation.html" class="proj_text">Cloth Simulation</a>
+                    <a class="proj_text" href="cloth_simulation.html">Cloth Simulation</a>
                 </div>
 
                 <div class="project cursor opengl cse_169">
                     <img id="169_5_icon" class="proj_icon" src="Assets/CSE169Images/169hw5_icon.JPG" />
-                    <a href="inverse_kinematics.html" class="proj_text">Inverse Kinematics</a>
+                    <a class="proj_text" href="inverse_kinematics.html">Inverse Kinematics</a>
                 </div>
             </div>
-        </details>
+        </div>
+    </div>
+
+    <hr />
+
+    <div id="about_me">
+        <h2 class="section_title">About Me</h2>
+        <div id="about_languages">
+            <h3 class="about_description_title">Languages</h3>
+
+            <div class="content">
+                <span>Java</span>
+                <span>C/C++</span>
+                <span>C#</span>
+                <span>OpenGL</span>
+                <span>Python</span>
+                <span>HTML/CSS/JavaScript</span>
+            </div>
+        </div>
+
+        <button id="resume">PDF</button>
+
+        <div id="about_software">
+            <h3 class="about_description_title">Software/Engines</h3>
+            <div class="content">
+                <span>Visual Studio</span>
+                <span>Unity</span>
+                <span>Git</span>
+            </div>
+        </div>
     </div>
 
     <footer>
-        <h2 id="footer_title">About Me</h2>
-        <button id="resume">PDF</button>
         <p id="email">Email: ellenchoi97@gmail.com</p>
-        <div id="about_languages">
-            <h3 class="about_description_title">Languages</h3>
-            <p class="about_description">Java <br /> C/C++ <br /> C# <br /> OpenGL <br /> Python <br /> HTML/CSS/JavaScript </p>
-        </div>
-        <div id="about_software">
-            <h3 class="about_description_title">Software/Engines</h3>
-            <p class="about_description">Visual Studio <br /> Unity <br /> Git</p>
-        </div>
+        <p>Github: ______</p>
+        <p>TMI page</p>
+
+
+
     </footer>
 
 

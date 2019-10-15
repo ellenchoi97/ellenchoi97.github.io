@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <script type="module">
+        import { initPage } from './script.js';
+        window.onload = initPage;
+    </script>
+    <title>Ellen Choi Portfolio</title>
+</head>
+<body>
+    <div class="img_string hide">Assets/Snake/gameplay.gif</div>
+    <div class="img_string hide">Assets/Snake/start_screen.JPG</div>
+    <div class="img_string hide">Assets/Snake/game_over.JPG</div>
+
+    <header>
+        <div class="grid_main">
+            <h1 class="my_name cursor" id="main_title">ELLEN CHOI</h1>
+
+            <nav>
+                <div class="dropdown">
+                    <a class="menu_item" id="proj_button" href="index.html">Projects</a>
+
+                    <ol class="project_options">
+                        <li><a id="feature" class="menu_item" href="index.html">Featured Projects</a></li>
+                        <li><a id="all_proj" class="menu_item" href="index.html">All Projects</a></li>
+                    </ol>
+                </div>
+
+
+                <a id="about" class="menu_item" href="index.html">About</a>
+            </nav>
+        </div>
+
+        <hr id="header_divider" />
+    </header>
+
+    <div class="background">
+        <h1 class="">Tetris</h1>
+        <span class="language">Python</span>
+        <span class="language">Pygame</span>
+
+        <div class="proj_description">
+
+            <p>This project is a remake of the classic arcade game, Tetris.</p>
+
+            <a href="http://ivl.calit2.net/wiki/index.php/Project4W19">Github Link</a>
+
+            <!-- Code for image gallery: https://www.w3schools.com/howto/howto_js_slideshow_gallery.asp -->
+            <!-- Container for the image gallery -->
+            <div class="gallery_container gallery">
+
+                <!-- Full-width images with number text -->
+                <div class="slide gallery">
+                    <span class="slideNum gallery"></span>
+                    <img src="" class="gallery_img gallery">
+                </div>
+
+                <!-- Next and previous buttons -->
+                <button class="prev cursor">&#10094;</button>
+                <button class="next cursor">&#10095;</button>
+
+                <!-- Image text -->
+                <p class="caption"></p>
+
+                <!-- Thumbnail images -->
+                <div class="thumbnails">
+                    <img class="thumbnail_img cursor show" src="Assets/Snake/gameplay_icon.JPG" alt="Single Player Gameplay">
+                    <img class="thumbnail_img cursor show" src="Assets/Snake/game_over.JPG" alt="Game Over Screen">
+                    <img class="thumbnail_img cursor show" src="Assets/Snake/start_screen.JPG" alt="Game Start Screen">
+                    <img class="thumbnail_img cursor show" src="Assets/Snake/two_gameplay_icon.JPG" alt="Two Player Gameplay">
+                    <img class="thumbnail_img cursor show" src="Assets/Snake/two_game_over.JPG" alt="Two Player Game Over Screen">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
