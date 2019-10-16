@@ -302,6 +302,10 @@ hr {
     padding: 0px 10px 0px 20px;
 }
 
+#proj_categories li {
+    padding: 5px;
+}
+
 #icon_grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

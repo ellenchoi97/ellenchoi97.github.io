@@ -23,25 +23,20 @@
     <div class="img_string hide">Assets/CSE167HW2/hw2_rotating.gif</div>
 
     <header>
-        <div class="grid_main">
-            <h1 class="my_name cursor" id="main_title">ELLEN CHOI</h1>
+        <div id="grid_main">
+            <h1 id="my_name" class="cursor">ELLEN CHOI</h1>
 
             <nav>
-                <div class="dropdown">
-                    <a class="menu_item" id="proj_button" href="index.html">Projects</a>
+                <a id="proj_button" class="menu_item" href="index.html">Projects</a>
 
-                    <ol class="project_options">
-                        <li><a id="feature" class="menu_item" href="index.html">Featured Projects</a></li>
-                        <li><a id="all_proj" class="menu_item" href="index.html">All Projects</a></li>
-                    </ol>
-                </div>
-
+                <ol id="project_options">
+                    <li><a class="menu_item" href="index.html">Featured Projects</a></li>
+                    <li><a class="menu_item" href="index.html">All Projects</a></li>
+                </ol>
 
                 <a id="about" class="menu_item" href="index.html">About</a>
             </nav>
         </div>
-
-        <hr id="header_divider" />
     </header>
 
     <div class="background">
@@ -103,8 +98,10 @@
                         <li>Significant diffuse and specular reflection components</li>
                     </ul>
                 </li>
-                <li>Create three different light sources - point light, directional light, and spotlight - with three different colors. 
-                Render spheres to represent the location and color of the light sources.</li>
+                <li>
+                    Create three different light sources - point light, directional light, and spotlight - with three different colors.
+                    Render spheres to represent the location and color of the light sources.
+                </li>
                 <li>When a light's rotation is disabled, keep the light fixed in the model space.</li>
             </ol>
 
