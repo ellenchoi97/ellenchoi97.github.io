@@ -1,7 +1,26 @@
 /* -------------------------------- */
 //All pages
+function changeWidth() {
+    var header = document.getElementsByTagName("header")[0];
+
+    if (window.scrollY < 200) {
+        header.style.height = "75px";
+        header.style.boxShadow = "none";
+        header.style.paddingTop = "20px";
+    }
+    else {
+        header.style.height = "65px";
+        header.style.boxShadow = "5px 1px 7px black";
+        header.style.paddingTop = "0px";
+    }
+}
+
 export function initPage() {
-    document.getElementById("main_title").addEventListener("click", function () { nextPage("index.html"); });
+    window.addEventListener("scroll", changeWidth);
+
+    document.getElementById('project_options').style.right = document.getElementById('about').style.width;
+
+    document.getElementById("my_name").addEventListener("click", function () { nextPage("index.html"); });
     document.getElementById("all_proj").addEventListener("click", function () { sessionStorage.setItem("jumpTo", 1); });
     document.getElementById("about").addEventListener("click", function () { sessionStorage.setItem("jumpTo", 2); });
 }
@@ -10,69 +29,109 @@ export function initPage() {
 //index.html
 //Sort the project icons
 function re_sort(view_by) {
-    var ordered = [];   //The list of lists for where icons belong
-    var cat_names;      //The names of the categories
+    var proj_grid = document.getElementById("icon_grid");
+    proj_grid.style.opacity = 0;
+    proj_grid.style.transform = "translateX(50px)";
 
-    //Get the icons and the names of the categories
-    if (view_by == "class") {
-        ordered.push(document.getElementsByClassName("cse_134b"));
-        ordered.push(document.getElementsByClassName("cse_167"));
-        ordered.push(document.getElementsByClassName("cse_165"));
-        ordered.push(document.getElementsByClassName("cse_169"));
-        cat_names = ["Web Client Languages", "Introduction to Computer Graphics", "3D User Interaction", "Computer Animation"];
-    }
-    else if (view_by == "prog_lang") {
-        ordered.push(document.getElementsByClassName("html"));
-        ordered.push(document.getElementsByClassName("opengl"));
-        ordered.push(document.getElementsByClassName("unity"));
-        cat_names = ["HTML/CSS/JavaScript", "C++/OpenGL", "C#/Unity"];
-    }
 
-    //The number of categories
-    var catNum = cat_names.length;        
+    window.setTimeout(function () {
+        var projects = document.getElementsByClassName("project");
+        var numProjects = 0;
 
-    //Create basic layout for all view by options
-    //Create div tags for grid layout
-    var icon_grid_div = new Array(catNum);
-    for (var i = 0; i < catNum; i++) {
-        icon_grid_div[i] = document.createElement("div");
-        icon_grid_div[i].className = "icon_grid";
-    }
+        document.getElementById("index_prev").style.opacity = 0;
+        document.getElementById("index_next").style.opacity = 0;
 
-    //Create summaries for details title
-    var newSummaries = new Array(catNum);
-    for (var i = 0; i < catNum; i++) {
-        newSummaries[i] = document.createElement("summary");
-    }
+        for (var j = 3; j < projects.length; j++) {
+            projects[j].className = projects[j].className.replace(" hide", "");
+            projects[j].className = projects[j].className.replace(" hidden", "");
+            if (view_by != "all" && !projects[j].className.includes(view_by)) {
+                projects[j].className += " hide";
+            }
+            else {
+                if (numProjects >= 6) {
+                    if (numProjects == 6) {
+                        document.getElementById("index_next").style.opacity = 1;
+                    }
+                    projects[j].className += " hidden";
+                }
+                numProjects++;
+            }
+        }
 
-    //Create details
-    var newCategories = new Array(catNum);
-    for (var i = 0; i < catNum; i++) {
-        newCategories[i] = document.createElement("details");
-        newCategories[i].appendChild(newSummaries[i]);
-        newCategories[i].appendChild(icon_grid_div[i]);
-    }
+        proj_grid.style.opacity = 1;
+        proj_grid.style.transform = "translateX(0px)";
+    }, 1000);
+}
 
-    //Set the category's name and insert icons
-    for (var i = 0; i < catNum; i++) {
-        newSummaries[i].innerHTML = cat_names[i];
+function traverseProj(direction) {
+    var prev_button = document.getElementById("index_prev");
+    var next_button = document.getElementById("index_next");
+    prev_button.style.opacity = 0;
+    prev_button.className = "";
+    next_button.style.opacity = 0;
+    next_button.className = "";
 
-        for (var j = ordered[i].length - 1; j >= 0; j--) {
-            icon_grid_div[i].insertBefore(ordered[i][j], icon_grid_div[i].childNodes[0]);
+    var projects = document.getElementsByClassName("project");
+
+    if (direction == -1) {
+        next_button.style.opacity = 1;
+        next_button.className = "cursor";
+
+        for (var i = 3; i < projects.length; i++) {
+            if (!projects[i].className.includes("hide") && !projects[i].className.includes("hidden")) {
+                break;
+            }
+        }
+
+        var numProjects = 0;
+        for (var j = i - 1; j > 2; j--) {
+            if (numProjects < 6 && projects[j].className.includes("hidden")) {
+                projects[j].className = projects[j].className.replace(" hidden", "");
+                numProjects++;
+            }
+            else if (numProjects == 6 && projects[j].className.includes("hidden")) {
+                prev_button.style.opacity = 1;
+                prev_button.className = "cursor";
+                break;
+            }
+        }
+
+        for (var k = i; k < projects.length; k++) {
+            if (!projects[k].className.includes("hide") && !projects[k].className.includes("hidden")) {
+                projects[k].className += " hidden";
+            }
         }
     }
 
-    //Delete existing categories
-    var categories = document.getElementsByClassName("category");
-    for (var i = categories.length - 1; i >= 0; i--) {
-        categories[i].parentElement.removeChild(categories[i]);
-    }
+    else {
+        prev_button.style.opacity = 1;
+        prev_button.className = "cursor";
 
-    //Add new categories
-    var theBody = document.getElementById("all_projects");
-    for (var i = 0; i < newCategories.length; i++) {
-        newCategories[i].className = "category";
-        theBody.appendChild(newCategories[i]);
+        var toEnd = 0;
+        for (var i = 3; i < projects.length; i++) {
+            if (!projects[i].className.includes("hide") && !projects[i].className.includes("hidden")) {
+                projects[i].className += " hidden";
+                toEnd++;
+
+                if (toEnd == 6) {
+                    i++;
+                    break;
+                }
+            }
+        }
+
+        var numProjects = 0;
+        for (var j = i; j < projects.length; j++) {
+            if (numProjects < 6 && projects[j].className.includes("hidden")) {
+                projects[j].className = projects[j].className.replace(" hidden", "");
+                numProjects++;
+            }
+            else if (numProjects == 6 && projects[j].className.includes("hidden")) {
+                next_button.style.opacity = 1;
+                next_button.className = "cursor";
+                break;
+            }
+        }
     }
 }
 
@@ -96,7 +155,19 @@ export function initIndex() {
     }
     sessionStorage.removeItem("jumpTo");
 
-    document.getElementById("view_by_menu").addEventListener("change", function () { re_sort(document.getElementById("view_by_menu").value) });
+    document.getElementById('top_projects').className += 'loaded';
+
+    var options = document.getElementsByClassName("view_option");
+    for (let i = 0; i < options.length; i++) {
+        options[i].addEventListener("click", function () { re_sort(options[i].id); });
+    }
+
+    var prev_button = document.getElementById("index_prev");
+    var next_button = document.getElementById("index_next");
+    prev_button.addEventListener("click", function () { if (prev_button.style.opacity == 1) { traverseProj(-1); } });
+    next_button.addEventListener("click", function () { if (next_button.style.opacity == 1) { traverseProj(1); } });
+
+    re_sort("all");
 
     document.getElementById("134b_final_icon").addEventListener("click", function () { nextPage("meme_master.html") });
 
@@ -115,8 +186,6 @@ export function initIndex() {
     document.getElementById("169_3_icon").addEventListener("click", function () { nextPage("skeleton_skinning_keyframe_animation.html") });
     document.getElementById("169_4_icon").addEventListener("click", function () { nextPage("cloth_simulation.html") });
     document.getElementById("169_5_icon").addEventListener("click", function () { nextPage("inverse_kinematics.html") });
-
-    document.getElementById("resume").addEventListener("click", function () { nextPage("Assets/Ellen_Choi_Resume.pdf") });
 }
 
 /* -------------------------------- */
