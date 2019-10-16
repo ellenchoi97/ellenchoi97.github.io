@@ -16,6 +16,8 @@ header {
     padding-top: 20px;
     background: linear-gradient(45deg, #00b4db, #0e9c8b, #0083b0);
     box-shadow: 5px 1px 7px black;
+    height: 75px;
+    transition: 0.5s;
 }
 
 nav {
@@ -63,10 +65,10 @@ nav {
     margin: 8px;
 }
 
-#project_options li {
-    padding: 2px;
-    text-align: left;
-}
+    #project_options li {
+        padding: 2px;
+        text-align: left;
+    }
 
 /* -------------------------------- */
 /* All project detail pages */
@@ -137,11 +139,11 @@ nav {
     border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color 
+    /* On hover, add a black background color 
    with a little bit see-through */
-.prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
+    .prev:hover, .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
 
 /* Add a pointer when hovering over 
    the thumbnail images */
@@ -173,9 +175,9 @@ nav {
     opacity: 0.6;
 }
 
-.active, .thumbnail_img:hover {
-    opacity: 1;
-}
+    .active, .thumbnail_img:hover {
+        opacity: 1;
+    }
 
 .proj_description {
     margin: 30px 0;
@@ -189,18 +191,6 @@ hr {
     background-color: #0f1115;
 }
 
-select {
-    padding: 2px;
-    background-color: #1a1a1a;
-    border-color: black;
-}
-
-footer {
-    background: #22272b;
-    position: absolute;
-    width: 100%;
-}
-
 .section_title {
     font-size: 40px;
     margin-left: auto;
@@ -209,55 +199,65 @@ footer {
     text-align: center;
 }
 
+.view_title {
+    color: gray;
+}
+
+.view_option:hover {
+    color: #00b3b3;
+}
+
 .project {
     position: relative;
     max-width: 300px;
 }
 
-    .project:hover .proj_icon {
+    .project img {
+        width: 100%;
+        transition: .5s;
+    }
+
+    .project a {
+        position: absolute;
+        text-decoration: none;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 20px;
+        text-align: center;
+        opacity: 0;
+        transition: .5s;
+    }
+
+    .project:hover img {
         opacity: 0.3;
     }
 
-    .project:hover .proj_text {
+    .project:hover a {
         opacity: 1;
     }
 
-.proj_icon {
-    width: 100%;
-    transition: .5s ease;
-}
-
-.proj_text {
-    position: absolute;
-    text-decoration: none;
-    width: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 20px;
-    text-align: center;
-    opacity: 0;
-    transition: .5s ease;
-}
-
-.icon_grid{
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-}
-
-.lang_icon {
-    width: 50px;
-    height: 50px;
+.hidden {
+    display: none;
 }
 
 .about_description_title {
     text-align: center;
 }
 
+.small_icon {
+    width: 30px;
+    background: #3180c0;
+    border-style: solid;
+    border-radius: 13px;
+    border-color: #3180c0;
+}
+
 .content {
     background: #1d1e1f;
     border-style: solid;
-    border-color: teal;
+    border-color: #182848;
     border-radius: 10px;
     padding: 20px;
     height: 150px;
@@ -282,33 +282,58 @@ footer {
     -webkit-transition: opacity 3s, transform 3s; /* Safari */
 }
 
-#top_projects.loaded {
-    opacity: 1;
-    transform: translateY(0px);
-}
+    #top_projects.loaded {
+        opacity: 1;
+        transform: translateY(0px);
+    }
 
-#projects_section{
+#projects_section {
     margin: 5% 0px;
 }
 
-#all_projects {
-    margin: 30px 0 0 30px;
+#projects_content {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 10px;
 }
 
-#proj_categories {
-    margin-top: 10px;
+#proj_categories * {
+    list-style: none;
+    padding: 0px 10px 0px 20px;
 }
 
-#select_description {
-    font-size: 14px;
+#icon_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    opacity: 0;
+    transform: translateX(50px);
+    transition: 1s;
 }
+
+#view_buttons {
+    grid-column-start: 2;
+    grid-row-start: 3;
+}
+
+    #view_buttons button {
+        background: #00b3b3;
+        border-style: solid;
+        border-color: #00b3b3;
+        border-radius: 5px;
+        width: 50px;
+    }
 
 #about_me {
     text-align: center;
     margin: 5% 0px;
-    justify-content: center;
+}
+
+#about_content {
     display: grid;
-    grid-template: "title title title" "section1 section2 section3";
+    grid-template: "info1 info2 info3" "section1 section2 section3";
+    grid-row-gap: 20px;
+    place-items: center;
 }
 
 #about_me h2 {
@@ -316,45 +341,78 @@ footer {
 }
 
 #about_languages {
-    background: teal;
+    background: linear-gradient(45deg, #0082c8, #667db6);
     padding: 5px;
     border-style: solid;
-    border-color: teal;
+    border-color: #182848;
     border-radius: 10px;
 }
 
-#about_languages div {
-    display: grid;
-    grid-column: auto auto;
-    grid-template-columns: auto auto;
-    grid-column-gap: 20px;
-    align-items: center;
-}
+    #about_languages div {
+        display: grid;
+        grid-column: auto auto;
+        grid-template-columns: auto auto;
+        grid-column-gap: 20px;
+        align-items: center;
+    }
 
 #resume {
-    width: 25px;
-    background-color: #ff1919;
-    border-style: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    box-sizing: content-box;
+    position: relative;
 }
 
+    #resume img {
+        border-style: solid;
+        border-radius: 5px;
+        border-color: #667db6;
+        height: 256px;
+        box-sizing: border-box;
+        transition: 0.3s;
+    }
+
+    #resume a {
+        position: absolute;
+        left: 50%;
+        background: #667db6;
+        text-decoration: none;
+        transform: translateX(-50%);
+        top: 20px;
+        padding: 5px;
+        border-style: solid;
+        border-color: #667db6;
+        border-radius: 10px;
+        opacity: 0;
+        transition: 0.3s;
+    }
+
+    #resume:hover img {
+        opacity: 0.5;
+    }
+
+    #resume:hover a {
+        opacity: 1;
+    }
+
 #about_software {
-    background: teal;
+    background: linear-gradient(135deg, #667db6, #0082c8);
     padding: 5px;
     border-style: solid;
-    border-color: teal;
+    border-color: #182848;
     border-radius: 10px;
 }
 
-#about_software div {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-column-gap: 20px;
-    align-items: center;
+    #about_software div {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-column-gap: 20px;
+        align-items: center;
+    }
+
+#icon_credit {
+    color: gray;
+    font-size: 14px;
 }
 
-#email {
-    grid-area: email;
-}
+    #icon_credit a {
+        color: gray;
+        text-decoration: none;
+    }
