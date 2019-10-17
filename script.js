@@ -281,9 +281,6 @@ export function initProjPage() {
     initPage();
 
     var header = document.getElementsByTagName("header")[0];
-    header.style.height = "65px";
-    header.style.boxShadow = "5px 1px 7px black";
-    header.style.paddingTop = "0px";
 
     document.getElementsByClassName("prev")[0].addEventListener("click", function () { plusSlides(-1) });
     document.getElementsByClassName("next")[0].addEventListener("click", function () { plusSlides(1) });
