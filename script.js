@@ -153,7 +153,7 @@ export function initIndex() {
     initPage();
 
     var goToProj = sessionStorage.getItem("jumpTo");
-    if (!goToProj) {
+    if (goToProj != null) {
         if (goToProj == 1) {
             var goto = document.getElementById("projects_section");
         }
