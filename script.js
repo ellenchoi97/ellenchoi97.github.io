@@ -1,6 +1,17 @@
 /* -------------------------------- */
 //All pages
-function changeWidth() {
+export function initPage() {
+    document.getElementById('project_options').style.right = window.getComputedStyle(document.getElementById("about")).marginTop;
+
+    document.getElementById("my_name").addEventListener("click", function () { nextPage("index.html"); });
+    document.getElementById("all_proj").addEventListener("click", function () { sessionStorage.setItem("jumpTo", 1); });
+    document.getElementById("about").addEventListener("click", function () { sessionStorage.setItem("jumpTo", 2); });
+}
+
+/* -------------------------------- */
+//index.html
+
+function initScrollEvents() {
     var header = document.getElementsByTagName("header")[0];
 
     if (window.scrollY < 200) {
@@ -13,20 +24,17 @@ function changeWidth() {
         header.style.boxShadow = "5px 1px 7px black";
         header.style.paddingTop = "0px";
     }
+
+    var projects = document.getElementById("projects_section");
+    var projMargin = parseInt(window.getComputedStyle(projects).marginTop, 10)
+    var offset = document.getElementsByTagName("header")[0].offsetHeight + projMargin;
+    var proj_grid = document.getElementById("icon_grid");
+    if (proj_grid.style.opacity == 0 && Math.abs(projects.getBoundingClientRect().y - offset) < 50) {
+        proj_grid.style.opacity = 1;
+        proj_grid.style.transform = "translateX(0px)";
+    }
 }
 
-export function initPage() {
-    window.addEventListener("scroll", changeWidth);
-
-    document.getElementById('project_options').style.right = document.getElementById('about').style.width;
-
-    document.getElementById("my_name").addEventListener("click", function () { nextPage("index.html"); });
-    document.getElementById("all_proj").addEventListener("click", function () { sessionStorage.setItem("jumpTo", 1); });
-    document.getElementById("about").addEventListener("click", function () { sessionStorage.setItem("jumpTo", 2); });
-}
-
-/* -------------------------------- */
-//index.html
 //Sort the project icons
 function re_sort(view_by) {
     var proj_grid = document.getElementById("icon_grid");
@@ -145,15 +153,19 @@ export function initIndex() {
     initPage();
 
     var goToProj = sessionStorage.getItem("jumpTo");
-    if (goToProj == 1) {
-        var coord = document.getElementById("body_divider").getBoundingClientRect().y - document.getElementsByTagName("header")[0].offsetHeight;
+    if (!goToProj) {
+        if (goToProj == 1) {
+            var goto = document.getElementById("projects_section");
+        }
+        else if (goToProj == 2) {
+            var goto = document.getElementId("about_me");
+        }
+        var goto_margin = parseInt(window.getComputedStyle(goto).marginTop, 10)
+        var coord = goto.getBoundingClientRect().y - document.getElementsByTagName("header")[0].offsetHeight - goto_margin;
         window.scrollTo(0, coord);
+
+        sessionStorage.removeItem("jumpTo");
     }
-    else if (goToProj == 2) {
-        var coord = document.getElementsByTagName("footer")[0].getBoundingClientRect().y - document.getElementsByTagName("header")[0].offsetHeight;
-        window.scrollTo(0, coord);
-    }
-    sessionStorage.removeItem("jumpTo");
 
     document.getElementById('top_projects').className += 'loaded';
 
@@ -168,6 +180,8 @@ export function initIndex() {
     next_button.addEventListener("click", function () { if (next_button.style.opacity == 1) { traverseProj(1); } });
 
     re_sort("all");
+
+    window.addEventListener("scroll", initScrollEvents);
 
     document.getElementById("134b_final_icon").addEventListener("click", function () { nextPage("meme_master.html") });
 
@@ -252,6 +266,11 @@ export function currentSlide(n) {
 
 export function initProjPage() {
     initPage();
+
+    var header = document.getElementsByTagName("header")[0];
+    header.style.height = "65px";
+    header.style.boxShadow = "5px 1px 7px black";
+    header.style.paddingTop = "0px";
 
     document.getElementsByClassName("prev")[0].addEventListener("click", function () { plusSlides(-1) });
     document.getElementsByClassName("next")[0].addEventListener("click", function () { plusSlides(1) });
