@@ -167,11 +167,15 @@ export function initIndex() {
             var goto = document.getElementById("projects_section");
         }
         else if (goToProj == 2) {
-            var goto = document.getElementId("about_me");
+            var goto = document.getElementById("about_me");
         }
         var goto_margin = parseInt(window.getComputedStyle(goto).marginTop, 10)
         var coord = goto.getBoundingClientRect().y - document.getElementsByTagName("header")[0].offsetHeight - goto_margin;
-        window.scrollTo(0, coord);
+        window.scrollTo({
+            top: coord,
+            left: 0,
+            behavior: 'smooth'
+        });
 
         sessionStorage.removeItem("jumpTo");
     }
