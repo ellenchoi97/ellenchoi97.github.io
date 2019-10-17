@@ -73,6 +73,11 @@ function re_sort(view_by) {
 }
 
 function traverseProj(direction) {
+    var proj_grid = document.getElementById("icon_grid");
+    proj_grid.style.opacity = 0;
+    proj_grid.style.transform = "translateX(50px)";
+
+    window.setTimeout(function () {
     var prev_button = document.getElementById("index_prev");
     var next_button = document.getElementById("index_next");
     prev_button.style.opacity = 0;
@@ -141,7 +146,10 @@ function traverseProj(direction) {
                 break;
             }
         }
-    }
+        }
+        proj_grid.style.opacity = 1;
+        proj_grid.style.transform = "translateX(0px)";
+    }, 1000);
 }
 
 //Go to the linked page
@@ -177,6 +185,8 @@ export function initIndex() {
 
     var prev_button = document.getElementById("index_prev");
     var next_button = document.getElementById("index_next");
+    prev_button.style.opacity = 0;
+    next_button.style.opacity = 1;
     prev_button.addEventListener("click", function () { if (prev_button.style.opacity == 1) { traverseProj(-1); } });
     next_button.addEventListener("click", function () { if (next_button.style.opacity == 1) { traverseProj(1); } });
 
