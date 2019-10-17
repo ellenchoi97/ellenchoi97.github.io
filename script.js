@@ -1,7 +1,7 @@
 /* -------------------------------- */
 //All pages
 export function initPage() {
-    document.getElementById('project_options').style.right = window.getComputedStyle(document.getElementById("about")).marginTop;
+    document.getElementById('project_options').style.right = window.getComputedStyle(document.getElementById("about")).width;
 
     document.getElementById("my_name").addEventListener("click", function () { nextPage("index.html"); });
     document.getElementById("all_proj").addEventListener("click", function () { sessionStorage.setItem("jumpTo", 1); });
@@ -178,8 +178,6 @@ export function initIndex() {
     var next_button = document.getElementById("index_next");
     prev_button.addEventListener("click", function () { if (prev_button.style.opacity == 1) { traverseProj(-1); } });
     next_button.addEventListener("click", function () { if (next_button.style.opacity == 1) { traverseProj(1); } });
-
-    re_sort("all");
 
     window.addEventListener("scroll", initScrollEvents);
 
