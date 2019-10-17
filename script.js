@@ -13,8 +13,9 @@ export function initPage() {
 
 function initScrollEvents() {
     var header = document.getElementsByTagName("header")[0];
+    var headerHeight = header.offsetHeight;
 
-    if (window.scrollY < 200) {
+    if (window.scrollY < headerHeight) {
         header.style.height = "75px";
         header.style.boxShadow = "none";
         header.style.paddingTop = "20px";
@@ -27,7 +28,7 @@ function initScrollEvents() {
 
     var projects = document.getElementById("projects_section");
     var projMargin = parseInt(window.getComputedStyle(projects).marginTop, 10)
-    var offset = document.getElementsByTagName("header")[0].offsetHeight + projMargin;
+    var offset = headerHeight + projMargin;
     var proj_grid = document.getElementById("icon_grid");
     if (proj_grid.style.opacity == 0 && Math.abs(projects.getBoundingClientRect().y - offset) < 50) {
         proj_grid.style.opacity = 1;
