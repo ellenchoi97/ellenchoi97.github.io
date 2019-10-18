@@ -180,6 +180,7 @@ export function initIndex() {
         sessionStorage.removeItem("jumpTo");
     }
 
+    initScrollEvents();
 
     document.getElementById('top_projects').className += 'loaded';
 
