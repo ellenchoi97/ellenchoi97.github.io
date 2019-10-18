@@ -205,7 +205,7 @@ export function initIndex() {
 
     var meme_master = document.getElementsByClassName("134b_final_icon")
     for (var i = 0; i < meme_master.length; i++) {
-        meme_master.addEventListener("click", function () { nextPage("meme_master.html") });
+        meme_master[i].addEventListener("click", function () { nextPage("meme_master.html") });
     }
 
     document.getElementById("167_1_icon").addEventListener("click", function () { nextPage("rendering_point_clouds.html") });
@@ -214,7 +214,7 @@ export function initIndex() {
     document.getElementById("167_4_icon").addEventListener("click", function () { nextPage("roller_coaster.html") });
     var finding_mochi = document.getElementsByClassName("167_final_icon")
     for (var i = 0; i < finding_mochi.length; i++) {
-        finding_mochi.addEventListener("click", function () { nextPage("finding_mochi.html") });
+        finding_mochi[i].addEventListener("click", function () { nextPage("finding_mochi.html") });
     }
 
     document.getElementById("165_1_icon").addEventListener("click", function () { nextPage("trapped_by_a_big_wall.html") });
@@ -223,7 +223,7 @@ export function initIndex() {
     document.getElementById("165_4_icon").addEventListener("click", function () { nextPage("air_race_over_ucsd.html") });
     var adventure_vr = document.getElementsByClassName("165_final_icon")
     for (var i = 0; i < adventure_vr.length; i++) {
-        adventure_vr.addEventListener("click", function () { nextPage("adventure_machine_vr.html") });
+        adventure_vr[i].addEventListener("click", function () { nextPage("adventure_machine_vr.html") });
     }
 
     document.getElementById("169_3_icon").addEventListener("click", function () { nextPage("skeleton_skinning_keyframe_animation.html") });
