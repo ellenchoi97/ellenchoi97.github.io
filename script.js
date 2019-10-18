@@ -33,7 +33,7 @@ function initScrollEvents() {
     var proj_grid_bound = proj_grid.getBoundingClientRect();
     if (proj_grid.style.opacity == 0 &&
         (Math.abs(projects.getBoundingClientRect().y - offset) < 50) ||
-            (proj_grid_bound.top >= 0 && proj_grid_bound.bottom <= (window.innerWidth || document.documentElement.clientWidth))) {
+            (proj_grid_bound.top >= 0 && proj_grid_bound.bottom <= (window.innerHeight || document.documentElement.clientHeight))) {
         proj_grid.style.opacity = 1;
         proj_grid.style.transform = "translateX(0px)";
     }
