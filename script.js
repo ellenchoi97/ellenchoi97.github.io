@@ -30,7 +30,10 @@ function initScrollEvents() {
     var projMargin = parseInt(window.getComputedStyle(projects).marginTop, 10)
     var offset = headerHeight + projMargin;
     var proj_grid = document.getElementById("icon_grid");
-    if (proj_grid.style.opacity == 0 && Math.abs(projects.getBoundingClientRect().y - offset) < 50) {
+    var proj_grid_bound = proj_grid.getBoundingClientRect();
+    if (proj_grid.style.opacity == 0 &&
+        (Math.abs(projects.getBoundingClientRect().y - offset) < 50) ||
+            (proj_grid_bound.top >= 0 && proj_grid_bound.bottom <= (window.innerWidth || document.documentElement.clientWidth))) {
         proj_grid.style.opacity = 1;
         proj_grid.style.transform = "translateX(0px)";
     }
@@ -198,19 +201,30 @@ export function initIndex() {
 
     window.addEventListener("scroll", initScrollEvents);
 
-    document.getElementById("134b_final_icon").addEventListener("click", function () { nextPage("meme_master.html") });
+    document.getElementById("resume_icon").addEventListener("click", function () { nextPage("Assets/Ellen_Choi_Resume.pdf") });
+
+    var meme_master = document.getElementsByClassName("134b_final_icon")
+    for (var i = 0; i < meme_master.length; i++) {
+        meme_master.addEventListener("click", function () { nextPage("meme_master.html") });
+    }
 
     document.getElementById("167_1_icon").addEventListener("click", function () { nextPage("rendering_point_clouds.html") });
     document.getElementById("167_2_icon").addEventListener("click", function () { nextPage("3d_models_and_lighting.html") });
     document.getElementById("167_3_icon").addEventListener("click", function () { nextPage("textures_scene_graph_and_culling.html") });
     document.getElementById("167_4_icon").addEventListener("click", function () { nextPage("roller_coaster.html") });
-    document.getElementById("167_final_icon").addEventListener("click", function () { nextPage("finding_mochi.html") });
+    var finding_mochi = document.getElementsByClassName("167_final_icon")
+    for (var i = 0; i < finding_mochi.length; i++) {
+        finding_mochi.addEventListener("click", function () { nextPage("finding_mochi.html") });
+    }
 
     document.getElementById("165_1_icon").addEventListener("click", function () { nextPage("trapped_by_a_big_wall.html") });
     document.getElementById("165_2_icon").addEventListener("click", function () { nextPage("vr_classroom_design_tool_A.html") });
     document.getElementById("165_3_icon").addEventListener("click", function () { nextPage("vr_classroom_design_tool_B.html") });
     document.getElementById("165_4_icon").addEventListener("click", function () { nextPage("air_race_over_ucsd.html") });
-    document.getElementById("165_final_icon").addEventListener("click", function () { nextPage("adventure_machine_vr.html") });
+    var adventure_vr = document.getElementsByClassName("165_final_icon")
+    for (var i = 0; i < adventure_vr.length; i++) {
+        adventure_vr.addEventListener("click", function () { nextPage("adventure_machine_vr.html") });
+    }
 
     document.getElementById("169_3_icon").addEventListener("click", function () { nextPage("skeleton_skinning_keyframe_animation.html") });
     document.getElementById("169_4_icon").addEventListener("click", function () { nextPage("cloth_simulation.html") });
@@ -225,7 +239,7 @@ function showSlides() {
     var images = document.getElementsByClassName("img_string");         //The strings of the images' file locations
     var slides = document.getElementById("gallery_img");        //The img element that holds the main image
     var imgNum = document.getElementById("slideNum");           //The span element that shows image number
-    var captionText = document.getElementsByClassName("figcaption");       //The caption for the main image
+    var captionText = document.getElementsByTagName("figcaption");       //The caption for the main image
     var thumbnails = document.getElementsByClassName("thumbnail_img");  //The img elements for the thumbnail photos
 
     //If the slide index past the last index, go to index 0

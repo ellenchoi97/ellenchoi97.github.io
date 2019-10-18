@@ -76,6 +76,11 @@ nav {
 
 /* -------------------------------- */
 /* All project detail pages */
+h2 {
+    font-size: 27px;
+    margin: 0px;
+}
+
 figcaption {
     text-align: center;
     padding: 16px;
@@ -113,6 +118,7 @@ figcaption {
     margin: 5%;
     padding: 3%;
     border-radius: 30px;
+    font-size: 17px;
 }
 
     #background * {
@@ -121,21 +127,25 @@ figcaption {
         color: #acacac;
     }
 
-    #background h1, #background h2 {
+    #background h1, #background h2, #background h3 {
         color: #05d0d0;
+    }
+
+    #background a {
+        color: #7aa600;
+    }
+
+    #background h1 {
+        font-size: 40px;
     }
 
 #proj_description {
     margin-top: 10%;
 }
 
-#proj_description section {
-    margin: 5% 0px;
-}
-
-#proj_description li, #background p {
-    font-size: 17px;
-}
+    #proj_description section {
+        margin: 5% 0px;
+    }
 
 #gallery_container {
     position: relative;
@@ -176,14 +186,24 @@ figcaption {
     border-radius: 3px 0 0 3px;
 }
 
-#prev:hover, #next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
+    #prev:hover, #next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
 
 #thumbnails:after {
     content: "";
     display: table;
     clear: both;
+}
+
+/* -------------------------------- */
+/* skeleton_skinning_keyframe_animation.html */
+.no_thumbnail {
+    margin-top: 3% !important;
+}
+
+.first_subsection {
+    margin-top: 0px !important;
 }
 
 /* -------------------------------- */

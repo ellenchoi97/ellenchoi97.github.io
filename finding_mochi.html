@@ -6,8 +6,8 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" />
     <script type="module">
-        import { initPage } from './script.js';
-        window.onload = initPage;
+        import { initProjPage } from './script.js';
+        window.onload = initProjPage;
     </script>
     <title>Ellen Choi Portfolio</title>
 </head>
@@ -54,7 +54,7 @@
         <div id="gallery_container" class="gallery">
 
             <!-- Full-width images with number text -->
-            <figure id="slide" class=" gallery">
+            <figure id="slide" class="gallery">
                 <span id="slideNum" class="gallery"></span>
                 <img id="gallery_img" class="gallery">
 
@@ -67,19 +67,20 @@
             <button id="next" class="cursor">&#10095;</button>
 
             <!-- Thumbnail images -->
-            <div class="thumbnails">
+            <div id="thumbnails">
                 <img id="active" class="thumbnail_img cursor show" src="Assets/CSE167Final/ocean_regen_icon.JPG" alt="Regeneration of Bezier patches">
                 <img class="thumbnail_img cursor show" src="Assets/CSE167Final/terrain_regen_icon.JPG" alt="Regeneration of terrain with different randomizer seed values (top view)">
                 <img class="thumbnail_img cursor show" src="Assets/CSE167Final/terrain_regen_2_icon.JPG" alt="Regeneration of terrain with different randomizer seed values (side view)">
                 <img class="thumbnail_img cursor show" src="Assets/CSE167Final/tree_regen_icon.JPG" alt="Regeneration of L-system plants with different randomizer seed values">
                 <img class="thumbnail_img cursor show" src="Assets/CSE167Final/city_regen_icon.JPG" alt="Regeneration of city with different randomizer seed values">
                 <img class="thumbnail_img cursor show" src="Assets/CSE167Final/building_regen_icon.JPG" alt="Regeneration of buildings with different randomizer seed values">
-                <img class="thumbnail_img cursor show" src="Assets/CSE167Final/collision_spheres_icon.JPG" alt="Collision spheres on Baymax and Mochi">
-                <img class="thumbnail_img cursor show" src="Assets/CSE167Final/mochi_random_icon.JPG" alt="Relocating Mochi to a random position in the city">
+                <img class="thumbnail_img cursor hide" src="Assets/CSE167Final/collision_spheres_icon.JPG" alt="Collision spheres on Baymax and Mochi">
+                <img class="thumbnail_img cursor hide" src="Assets/CSE167Final/mochi_random_icon.JPG" alt="Relocating Mochi to a random position in the city">
             </div>
         </div>
 
         <div id="proj_description">
+
             <section>
                 <h2>Technical Features Implemented:</h2>
 
