@@ -4,9 +4,10 @@
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" />
     <script type="module">
-        import { initProjPage } from './script.js';
-        window.onload = initProjPage;
+        import { initPage } from './script.js';
+        window.onload = initPage;
     </script>
     <title>Ellen Choi Portfolio</title>
 </head>
@@ -21,24 +22,23 @@
     <div class="img_string hide">Assets/CSE167Final/mochi_random.gif</div>
 
     <header>
-        <div id="grid_main">
-            <h1 id="my_name" class="cursor">ELLEN CHOI</h1>
+        <h1 id="my_name" class="cursor">ELLEN CHOI</h1>
 
-            <nav>
-                <a id="proj_button" class="menu_item" href="index.html">Projects</a>
+        <nav>
+            <a id="proj_button" class="menu_item" href="index.html">Projects</a>
 
-                <ol id="project_options">
-                    <li><a class="menu_item" href="index.html">Featured Projects</a></li>
-                    <li><a id="all_proj" class="menu_item" href="index.html">All Projects</a></li>
-                </ol>
+            <ol id="project_options">
+                <li><a class="menu_item" href="index.html">Featured Projects</a></li>
+                <li><a id="all_proj" class="menu_item" href="index.html">All Projects</a></li>
+            </ol>
 
-                <a id="about" class="menu_item" href="index.html">About</a>
-            </nav>
-        </div>
+            <a id="about" class="menu_item" href="index.html">About</a>
+        </nav>
     </header>
 
-    <div class="background">
-        <h1 class="">Finding Mochi</h1>
+    <div id="background">
+        <h1>Finding Mochi</h1>
+
         <span class="language">C++</span>
         <span class="language">OpenGL</span>
 
@@ -51,24 +51,24 @@
 
         <!-- Code for image gallery: https://www.w3schools.com/howto/howto_js_slideshow_gallery.asp -->
         <!-- Container for the image gallery -->
-        <div class="gallery_container gallery">
+        <div id="gallery_container" class="gallery">
 
             <!-- Full-width images with number text -->
-            <div class="slide gallery">
-                <span class="slideNum gallery"></span>
-                <img src="" class="gallery_img gallery">
-            </div>
+            <figure id="slide" class=" gallery">
+                <span id="slideNum" class="gallery"></span>
+                <img id="gallery_img" class="gallery">
+
+                <!-- Image text -->
+                <figcaption></figcaption>
+            </figure>
 
             <!-- Next and previous buttons -->
-            <button class="prev cursor">&#10094;</button>
-            <button class="next cursor">&#10095;</button>
-
-            <!-- Image text -->
-            <p class="caption"></p>
+            <button id="prev" class="cursor">&#10094;</button>
+            <button id="next" class="cursor">&#10095;</button>
 
             <!-- Thumbnail images -->
             <div class="thumbnails">
-                <img class="thumbnail_img cursor show" src="Assets/CSE167Final/ocean_regen_icon.JPG" alt="Regeneration of Bezier patches">
+                <img id="active" class="thumbnail_img cursor show" src="Assets/CSE167Final/ocean_regen_icon.JPG" alt="Regeneration of Bezier patches">
                 <img class="thumbnail_img cursor show" src="Assets/CSE167Final/terrain_regen_icon.JPG" alt="Regeneration of terrain with different randomizer seed values (top view)">
                 <img class="thumbnail_img cursor show" src="Assets/CSE167Final/terrain_regen_2_icon.JPG" alt="Regeneration of terrain with different randomizer seed values (side view)">
                 <img class="thumbnail_img cursor show" src="Assets/CSE167Final/tree_regen_icon.JPG" alt="Regeneration of L-system plants with different randomizer seed values">
@@ -79,55 +79,61 @@
             </div>
         </div>
 
-        <div class="proj_description">
-            <a href="http://ivl.calit2.net/wiki/index.php/Project5F18">Project Rubric and Directions</a>
+        <div id="proj_description">
+            <section>
+                <h2>Technical Features Implemented:</h2>
 
-            <p>Technical Features Implemented:</p>
+                <a href="http://ivl.calit2.net/wiki/index.php/Project5F18">Project Rubric and Directions</a>
 
-            <ul>
-                <li>Toon shading</li>
-                <li>Surface made with two C1 continuous Bezier patches</li>
-                <li>Collision detection with bounding spheres</li>
-                <li>Procedurally modeled buildings</li>
-                <li>Procedurally modeled buildings</li>
-                <li>Procedurally modeled buildings</li>
-                <li>Procedurally modeled buildings</li>
-                <li>Procedurally modeled city</li>
-                <li>Procedurally generated terrain (diamond-square algorithm)</li>
-                <li>Procedurally generated plants with L-systems</li>
-                <li>Skybox environment</li>
-            </ul>
+                <ul>
+                    <li>Toon shading</li>
+                    <li>Surface made with two C1 continuous Bezier patches</li>
+                    <li>Collision detection with bounding spheres</li>
+                    <li>Procedurally modeled buildings</li>
+                    <li>Procedurally modeled buildings</li>
+                    <li>Procedurally modeled buildings</li>
+                    <li>Procedurally modeled buildings</li>
+                    <li>Procedurally modeled city</li>
+                    <li>Procedurally generated terrain (diamond-square algorithm)</li>
+                    <li>Procedurally generated plants with L-systems</li>
+                    <li>Skybox environment</li>
+                </ul>
+            </section>
 
-            <p>Keyboard Key Functions:</p>
+            <section>
+                <h2>Keyboard Key Functions:</h2>
 
-            <ul>
-                <li>1: Turn the Baymax model on/off</li>
-                <li>2: Turn the Mochi model on/off</li>
-                <li>3: Turn the rendering for the bounding spheres on/off</li>
-                <li>4: Turn the ocean patch on/off</li>
-                <li>5: Turn the terrain on/off</li>
-                <li>6: Turn the city on/off</li>
-                <li>7: Turn the buildings on/off</li>
-                <li>8: Turn the plants on/off</li>
-                <li>9: Turn on/off random relocation if Baymax catches Mochi 0: Turn the testing object on/off</li>
-                <li>C/c: Increase/Decrease the FOV (Zoom Out/Zoom In)</li>
-                <li>o: Toggle between only rendering the ocean path and rendering all models</li>
-                <li>p: Toggle between changing the FOV using C/c and Up/Down</li>
-                <li>r: Change the seed value for the procedurally generated models that are on (ocean patch, terrain, city, building, plants)</li>
-                <li>S/s: Scale the model up/down z: Toggle between changing the value of the y coordinate or the z coordinate</li>
-                <li>Up Arrow: Increase the value of the y coordinate or decrease the value of the z coordinate</li>
-                <li>Down Arrow: Decrease the value of the y coordinate or increase the value of the z coordinate</li>
-                <li>Left Arrow: Decrease the value of the x coordinate for the models that are on</li>
-                <li>Right Arrow: Increase the value of the x coordinate for the models that are on</li>
-                <li>F1: Go to ground view</li>
-                <li>F2: Go to bird's eye view</li>
-            </ul>
+                <ul>
+                    <li>1: Turn the Baymax model on/off</li>
+                    <li>2: Turn the Mochi model on/off</li>
+                    <li>3: Turn the rendering for the bounding spheres on/off</li>
+                    <li>4: Turn the ocean patch on/off</li>
+                    <li>5: Turn the terrain on/off</li>
+                    <li>6: Turn the city on/off</li>
+                    <li>7: Turn the buildings on/off</li>
+                    <li>8: Turn the plants on/off</li>
+                    <li>9: Turn on/off random relocation if Baymax catches Mochi 0: Turn the testing object on/off</li>
+                    <li>C/c: Increase/Decrease the FOV (Zoom Out/Zoom In)</li>
+                    <li>o: Toggle between only rendering the ocean path and rendering all models</li>
+                    <li>p: Toggle between changing the FOV using C/c and Up/Down</li>
+                    <li>r: Change the seed value for the procedurally generated models that are on (ocean patch, terrain, city, building, plants)</li>
+                    <li>S/s: Scale the model up/down z: Toggle between changing the value of the y coordinate or the z coordinate</li>
+                    <li>Up Arrow: Increase the value of the y coordinate or decrease the value of the z coordinate</li>
+                    <li>Down Arrow: Decrease the value of the y coordinate or increase the value of the z coordinate</li>
+                    <li>Left Arrow: Decrease the value of the x coordinate for the models that are on</li>
+                    <li>Right Arrow: Increase the value of the x coordinate for the models that are on</li>
+                    <li>F1: Go to ground view</li>
+                    <li>F2: Go to bird's eye view</li>
+                </ul>
+            </section>
 
-            <p>Mouse Functionality:</p>
+            <section>
+                <h2>Mouse Functionality:</h2>
 
-            <ul>
-                <li>Hold the left mouse button and move the cursor to rotate the camera around the center of the world.</li>
-            </ul>
+                <ul>
+                    <li>Hold the left mouse button and move the cursor to rotate the camera around the center of the world.</li>
+                </ul>
+            </section>
         </div>
     </div>
 </body>

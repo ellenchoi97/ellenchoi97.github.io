@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" />
     <script type="module">
         import { initPage } from './script.js';
         window.onload = initPage;
@@ -12,24 +13,23 @@
 </head>
 <body>
     <header>
-        <div id="grid_main">
-            <h1 id="my_name" class="cursor">ELLEN CHOI</h1>
+        <h1 id="my_name" class="cursor">ELLEN CHOI</h1>
 
-            <nav>
-                <a id="proj_button" class="menu_item" href="index.html">Projects</a>
+        <nav>
+            <a id="proj_button" class="menu_item" href="index.html">Projects</a>
 
-                <ol id="project_options">
-                    <li><a class="menu_item" href="index.html">Featured Projects</a></li>
-                    <li><a id="all_proj" class="menu_item" href="index.html">All Projects</a></li>
-                </ol>
+            <ol id="project_options">
+                <li><a class="menu_item" href="index.html">Featured Projects</a></li>
+                <li><a id="all_proj" class="menu_item" href="index.html">All Projects</a></li>
+            </ol>
 
-                <a id="about" class="menu_item" href="index.html">About</a>
-            </nav>
-        </div>
+            <a id="about" class="menu_item" href="index.html">About</a>
+        </nav>
     </header>
 
-    <div class="background">
-        <h1 class="">Trapped By A Big Wall</h1>
+    <div id="background">
+        <h1>Trapped By A Big Wall</h1>
+
         <span class="language">Unity</span>
         <span class="language">C#</span>
         <span class="language">Oculus Rift</span>
@@ -40,28 +40,31 @@
             This project involved implementing object selection and manipulation with visual indicators and physics simulation.
         </p>
 
-        <div class="proj_description">
-            <a href="http://ivl.calit2.net/wiki/index.php/Project1W19">Project Rubric and Directions</a>
+        <div id="proj_description">
 
-            <p>Goals for this Project:</p>
+            <section>
+                <h2>Goals for this Project:</h2>
 
-            <ol>
-                <li>Create a textured plane to represent the ground.</li>
-                <li>Procedurally generate a cylindrical wall of bricks. Add a texture and apply realistic physics properties to the bricks.</li>
-                <li>
-                    When the user stares at a brick for at least 2 seconds, allow the user to control the brick.
-                    <ul>
-                        <li>Depending on the user's head movement, the brick will move towards the outside or the inside of the wall.</li>
-                        <li>The brick moves parallel to the axis of the radius of the brick cylinder.</li>
-                        <li>The physics simulation makes the bricks above a removed brick tumble down.</li>
-                    </ul>
-                </li>
-                <li>Highlight the brick that is being looked at.</li>
-                <li>Reset the wall when the user looks up to the sky.</li>
-                <li>When the user stares at a brick for at least 7 seconds, explode the brick.</li>
-                <li>Add a radial widget to indicate how much longer the user must stare at a brick to activate movement and explosion.</li>
+                <a href="http://ivl.calit2.net/wiki/index.php/Project1W19">Project Rubric and Directions</a>
 
-            </ol>
+                <ol>
+                    <li>Create a textured plane to represent the ground.</li>
+                    <li>Procedurally generate a cylindrical wall of bricks. Add a texture and apply realistic physics properties to the bricks.</li>
+                    <li>
+                        When the user stares at a brick for at least 2 seconds, allow the user to control the brick.
+                        <ul>
+                            <li>Depending on the user's head movement, the brick will move towards the outside or the inside of the wall.</li>
+                            <li>The brick moves parallel to the axis of the radius of the brick cylinder.</li>
+                            <li>The physics simulation makes the bricks above a removed brick tumble down.</li>
+                        </ul>
+                    </li>
+                    <li>Highlight the brick that is being looked at.</li>
+                    <li>Reset the wall when the user looks up to the sky.</li>
+                    <li>When the user stares at a brick for at least 7 seconds, explode the brick.</li>
+                    <li>Add a radial widget to indicate how much longer the user must stare at a brick to activate movement and explosion.</li>
+
+                </ol>
+            </section>
         </div>
     </div>
 </body>

@@ -180,6 +180,7 @@ export function initIndex() {
         sessionStorage.removeItem("jumpTo");
     }
 
+
     document.getElementById('top_projects').className += 'loaded';
 
     var options = document.getElementsByClassName("view_option");
@@ -221,9 +222,9 @@ var slideIndex = 0;     //The index of the main image
 
 function showSlides() {
     var images = document.getElementsByClassName("img_string");         //The strings of the images' file locations
-    var slides = document.getElementsByClassName("gallery_img");        //The img element that holds the main image
-    var imgNum = document.getElementsByClassName("slideNum");           //The span element that shows image number
-    var captionText = document.getElementsByClassName("caption");       //The caption for the main image
+    var slides = document.getElementById("gallery_img");        //The img element that holds the main image
+    var imgNum = document.getElementById("slideNum");           //The span element that shows image number
+    var captionText = document.getElementsByClassName("figcaption");       //The caption for the main image
     var thumbnails = document.getElementsByClassName("thumbnail_img");  //The img elements for the thumbnail photos
 
     //If the slide index past the last index, go to index 0
@@ -246,7 +247,7 @@ function showSlides() {
 
     //For all thumbnail photos
     for (var i = 0; i < thumbnails.length; i++) {
-        thumbnails[i].className = thumbnails[i].className.replace(" active", "");
+        thumbnails[i].id = "";
 
         //If the thumbnail is shown
         if (i >= start && i <= start + 5) {
@@ -259,9 +260,9 @@ function showSlides() {
         }
     }
 
-    slides[0].src = images[slideIndex].innerHTML;                       //Change the main photo
-    imgNum[0].innerHTML = (slideIndex + 1) + " / " + images.length;     //Change the photo number text
-    thumbnails[slideIndex].className += " active";                      //Make stylistic changes to selected photo
+    slides.src = images[slideIndex].innerHTML;                       //Change the main photo
+    imgNum.innerHTML = (slideIndex + 1) + " / " + images.length;     //Change the photo number text
+    thumbnails[slideIndex].id = "active";                      //Make stylistic changes to selected photo
     captionText[0].innerHTML = thumbnails[slideIndex].alt;              //Change the caption
 }
 
@@ -281,9 +282,12 @@ export function initProjPage() {
     initPage();
 
     var header = document.getElementsByTagName("header")[0];
+    header.style.height = "65px";
+    header.style.boxShadow = "5px 1px 7px black";
+    header.style.paddingTop = "0px";
 
-    document.getElementsByClassName("prev")[0].addEventListener("click", function () { plusSlides(-1) });
-    document.getElementsByClassName("next")[0].addEventListener("click", function () { plusSlides(1) });
+    document.getElementById("prev").addEventListener("click", function () { plusSlides(-1) });
+    document.getElementById("next").addEventListener("click", function () { plusSlides(1) });
 
     var thumbnails = document.getElementsByClassName("thumbnail_img");
     for (let i = 0; i < thumbnails.length; i++) {

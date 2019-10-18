@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" />
     <script type="module">
         import { initProjPage } from './script.js';
         window.onload = initProjPage;
@@ -20,24 +21,23 @@
     <div class="img_string hide">Assets/CSE169Images/wind_z.gif</div>
 
     <header>
-        <div id="grid_main">
-            <h1 id="my_name" class="cursor">ELLEN CHOI</h1>
+        <h1 id="my_name" class="cursor">ELLEN CHOI</h1>
 
-            <nav>
-                <a id="proj_button" class="menu_item" href="index.html">Projects</a>
+        <nav>
+            <a id="proj_button" class="menu_item" href="index.html">Projects</a>
 
-                <ol id="project_options">
-                    <li><a class="menu_item" href="index.html">Featured Projects</a></li>
-                    <li><a id="all_proj" class="menu_item" href="index.html">All Projects</a></li>
-                </ol>
+            <ol id="project_options">
+                <li><a class="menu_item" href="index.html">Featured Projects</a></li>
+                <li><a id="all_proj" class="menu_item" href="index.html">All Projects</a></li>
+            </ol>
 
-                <a id="about" class="menu_item" href="index.html">About</a>
-            </nav>
-        </div>
+            <a id="about" class="menu_item" href="index.html">About</a>
+        </nav>
     </header>
 
-    <div class="background">
-        <h1 class="">Cloth Simulation</h1>
+    <div id="background">
+        <h1>Cloth Simulation</h1>
+
         <span class="language">C++</span>
         <span class="language">OpenGL</span>
 
@@ -48,24 +48,24 @@
 
         <!-- Code for image gallery: https://www.w3schools.com/howto/howto_js_slideshow_gallery.asp -->
         <!-- Container for the image gallery -->
-        <div class="gallery_container gallery">
+        <div id="gallery_container" class="gallery">
 
             <!-- Full-width images with number text -->
-            <div class="slide gallery">
-                <span class="slideNum gallery"></span>
-                <img src="" class="gallery_img gallery">
-            </div>
+            <figure id="slide" class="gallery">
+                <span id="slideNum" class="gallery"></span>
+                <img id="gallery_img" class="gallery">
+
+                <!-- Image text -->
+                <figcaption></figcaption>
+            </figure>
 
             <!-- Next and previous buttons -->
-            <button class="prev cursor">&#10094;</button>
-            <button class="next cursor">&#10095;</button>
-
-            <!-- Image text -->
-            <p class="caption"></p>
+            <button id="prev" class="cursor">&#10094;</button>
+            <button id="next" class="cursor">&#10095;</button>
 
             <!-- Thumbnail images -->
-            <div class="thumbnails">
-                <img class="thumbnail_img cursor show" src="Assets/CSE169Images/cloth_move_x_icon.JPG" alt="Changing the value of the x coordinate for the fixed cloth particles">
+            <div id="thumbnails">
+                <img id="active" class="thumbnail_img cursor show" src="Assets/CSE169Images/cloth_move_x_icon.JPG" alt="Changing the value of the x coordinate for the fixed cloth particles">
                 <img class="thumbnail_img cursor show" src="Assets/CSE169Images/cloth_move_y_icon.JPG" alt="Changing the value of the y coordinate for the fixed cloth particles">
                 <img class="thumbnail_img cursor show" src="Assets/CSE169Images/cloth_move_z_icon.JPG" alt="Changing the value of the z coordinate for the fixed cloth particles">
                 <img class="thumbnail_img cursor show" src="Assets/CSE169Images/wind_speed_icon.JPG" alt="Changing the value of the wind speed">
@@ -75,43 +75,51 @@
             </div>
         </div>
 
-        <a href="http://cseweb.ucsd.edu/classes/wi19/cse169-a/project4.html">Project Rubric and Directions</a>
+        <div id="proj_description">
+            <section>
+                <h2>Goals for this Project:</h2>
 
-        <p>Goals for this Project:</p>
+                <a href="http://cseweb.ucsd.edu/classes/wi19/cse169-a/project4.html">Project Rubric and Directions</a>
 
-        <ol>
-            <li>
-                Simulate a piece of cloth using particles, spring-dampers, and triangular surfaces.
+                <ol>
+                    <li>
+                        Simulate a piece of cloth using particles, spring-dampers, and triangular surfaces.
+                        <ul>
+                            <li>The cloth should include the effects of uniform gravity, spring elasticity, and damping.</li>
+                        </ul>
+                    </li>
+                    <li>Add a plane below the cloth and enforce a simple ground plane collision when the cloth touches the plane.</li>
+                    <li>Add "wind" and include the effects of aerodynamic drag to the cloth.</li>
+                    <li>Add controls to move the fixed cloth particles and the wind's speed and direction.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Keyboard Key Functions:</h2>
+
                 <ul>
-                    <li>The cloth should include the effects of uniform gravity, spring elasticity, and damping.</li>
+                    <li>a: Go to the previous DOF for the wind direction (z → y → x)</li>
+                    <li>d: Go to the next DOF for the wind direction (x → y → z)</li>
+                    <li>i: Increase value of the current DOF for the fixed particles</li>
+                    <li>j: Go to the previous DOF for the fixed particles (z → y → x)</li>
+                    <li>k: Decrease the value of the current DOF for the fixed particles</li>
+                    <li>l: Go to the next DOF for the fixed particles (x → y → z)</li>
+                    <li>s: Decrease the value of the current DOF for the wind direction</li>
+                    <li>S: Decrease the value of the wind speed</li>
+                    <li>w: Increase the value of the current DOF for the wind direction</li>
+                    <li>W: Increase the value of the wind speed</li>
                 </ul>
-            </li>
-            <li>Add a plane below the cloth and enforce a simple ground plane collision when the cloth touches the plane.</li>
-            <li>Add "wind" and include the effects of aerodynamic drag to the cloth.</li>
-            <li>Add controls to move the fixed cloth particles and the wind's speed and direction.</li>
-        </ol>
+            </section>
 
-        <p>Keyboard Key Functions:</p>
+            <section>
+                <h2>Mouse Functionality:</h2>
 
-        <ul>
-            <li>a: Go to the previous DOF for the wind direction (z → y → x)</li>
-            <li>d: Go to the next DOF for the wind direction (x → y → z)</li>
-            <li>i: Increase value of the current DOF for the fixed particles</li>
-            <li>j: Go to the previous DOF for the fixed particles (z → y → x)</li>
-            <li>k: Decrease the value of the current DOF for the fixed particles</li>
-            <li>l: Go to the next DOF for the fixed particles (x → y → z)</li>
-            <li>s: Decrease the value of the current DOF for the wind direction</li>
-            <li>S: Decrease the value of the wind speed</li>
-            <li>w: Increase the value of the current DOF for the wind direction</li>
-            <li>W: Increase the value of the wind speed</li>
-        </ul>
-
-        <p>Mouse Functionality:</p>
-
-        <ul>
-            <li>Hold the left mouse button and move the cursor left or right to rotate the camera around the center of the world.</li>
-            <li>Hold the right mouse button and move the cursor left or right to change the distance between the camera and the origin.</li>
-        </ul>
+                <ul>
+                    <li>Hold the left mouse button and move the cursor left or right to rotate the camera around the center of the world.</li>
+                    <li>Hold the right mouse button and move the cursor left or right to change the distance between the camera and the origin.</li>
+                </ul>
+            </section>
+        </div>
     </div>
 </body>
 </html>

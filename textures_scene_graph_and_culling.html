@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" />
     <script type="module">
         import { initProjPage } from './script.js';
         window.onload = initProjPage;
@@ -16,24 +17,23 @@
     <div class="img_string hide">Assets/CSE167HW3/walk_anim.gif</div>
 
     <header>
-        <div id="grid_main">
-            <h1 id="my_name" class="cursor">ELLEN CHOI</h1>
+        <h1 id="my_name" class="cursor">ELLEN CHOI</h1>
 
-            <nav>
-                <a id="proj_button" class="menu_item" href="index.html">Projects</a>
+        <nav>
+            <a id="proj_button" class="menu_item" href="index.html">Projects</a>
 
-                <ol id="project_options">
-                    <li><a class="menu_item" href="index.html">Featured Projects</a></li>
-                    <li><a id="all_proj" class="menu_item" href="index.html">All Projects</a></li>
-                </ol>
+            <ol id="project_options">
+                <li><a class="menu_item" href="index.html">Featured Projects</a></li>
+                <li><a id="all_proj" class="menu_item" href="index.html">All Projects</a></li>
+            </ol>
 
-                <a id="about" class="menu_item" href="index.html">About</a>
-            </nav>
-        </div>
+            <a id="about" class="menu_item" href="index.html">About</a>
+        </nav>
     </header>
 
-    <div class="background">
-        <h1 class="">Textures, Scene Graphs and Culling</h1>
+    <div id="background">
+        <h1>Textures, Scene Graphs and Culling</h1>
+
         <span class="language">C++</span>
         <span class="language">OpenGL</span>
 
@@ -45,59 +45,66 @@
 
         <!-- Code for image gallery: https://www.w3schools.com/howto/howto_js_slideshow_gallery.asp -->
         <!-- Container for the image gallery -->
-        <div class="gallery_container gallery">
+        <div id="gallery_container" class="gallery">
 
             <!-- Full-width images with number text -->
-            <div class="slide gallery">
-                <span class="slideNum gallery"></span>
-                <img src="" class="gallery_img gallery">
-            </div>
+            <figure id="slide" class="gallery">
+                <span id="slideNum" class="gallery"></span>
+                <img id="gallery_img" class="gallery">
+
+                <!-- Image text -->
+                <figcaption></figcaption>
+            </figure>
 
             <!-- Next and previous buttons -->
-            <button class="prev cursor">&#10094;</button>
-            <button class="next cursor">&#10095;</button>
-
-            <!-- Image text -->
-            <p class="caption"></p>
+            <button id="prev" class="cursor">&#10094;</button>
+            <button id="next" class="cursor">&#10095;</button>
 
             <!-- Thumbnail images -->
-            <div class="thumbnails">
-                <img class="thumbnail_img cursor show" src="Assets/CSE167HW3/cull1_icon.JPG" alt="View frustum culling after zoom in">
+            <div id="thumbnails">
+                <img id="active" class="thumbnail_img cursor show" src="Assets/CSE167HW3/cull1_icon.JPG" alt="View frustum culling after zoom in">
                 <img class="thumbnail_img cursor show" src="Assets/CSE167HW3/cull2_icon.JPG" alt="View frustum culling after rotating the camera">
                 <img class="thumbnail_img cursor show" src="Assets/CSE167HW3/walk_anim_icon.JPG" alt="Robot animation">
             </div>
         </div>
 
-        <div class="proj_description">
-            <a href="http://ivl.calit2.net/wiki/index.php/Project3F18">Project Rubric and Directions</a>
+        <div id="proj_description">
 
-            <p>Goals for this Project:</p>
+            <section>
+                <h2>Goals for this Project:</h2>
 
-            <ol>
-                <li>Load an image and create a textured 3D object.</li>
-                <li>Implement a scene graph to render a robot object. The scene graph must consist of at least three nodes: Node, Transform, and Geometry.</li>
-                <li>Animate the robot to make it look like it is walking.</li>
-                <li>Use the scene graph to construct a 2D grid of multiple robots.</li>
-                <li>Create a bounding sphere around each robot and implement view frustum culling. Display the number of robots rendered.</li>
-            </ol>
+                <a href="http://ivl.calit2.net/wiki/index.php/Project3F18">Project Rubric and Directions</a>
 
-            <p>Keyboard Key Functions:</p>
+                <ol>
+                    <li>Load an image and create a textured 3D object.</li>
+                    <li>Implement a scene graph to render a robot object. The scene graph must consist of at least three nodes: Node, Transform, and Geometry.</li>
+                    <li>Animate the robot to make it look like it is walking.</li>
+                    <li>Use the scene graph to construct a 2D grid of multiple robots.</li>
+                    <li>Create a bounding sphere around each robot and implement view frustum culling. Display the number of robots rendered.</li>
+                </ol>
+            </section>
 
-            <ul>
-                <li>c: Turn frustum culling on/off</li>
-                <li>f: Freeze/unfreeze the previous culling</li>
-                <li>n: Switch between normal coloring and the Phong illumination model</li>
-                <li>s: Turn bounding sphere rendering on/off</li>
-                <li>Up Arrow: Decrease the FOV (zoom in)</li>
-                <li>Down Arrow: Increase the FOV (zoom out)</li>
-            </ul>
+            <section>
+                <h2>Keyboard Key Functions:</h2>
 
-            <p>Mouse Functionality:</p>
+                <ul>
+                    <li>c: Turn frustum culling on/off</li>
+                    <li>f: Freeze/unfreeze the previous culling</li>
+                    <li>n: Switch between normal coloring and the Phong illumination model</li>
+                    <li>s: Turn bounding sphere rendering on/off</li>
+                    <li>Up Arrow: Decrease the FOV (zoom in)</li>
+                    <li>Down Arrow: Increase the FOV (zoom out)</li>
+                </ul>
+            </section>
 
-            <ul>
-                <li>Hold the left mouse button and move the cursor to rotate the camera in place.</li>
-                <li>Hold the right mouse button and move the cursor to rotate the camera around the center of the world.</li>
-            </ul>
+            <section>
+                <h2>Mouse Functionality:</h2>
+
+                <ul>
+                    <li>Hold the left mouse button and move the cursor to rotate the camera in place.</li>
+                    <li>Hold the right mouse button and move the cursor to rotate the camera around the center of the world.</li>
+                </ul>
+            </section>
         </div>
     </div>
 </body>

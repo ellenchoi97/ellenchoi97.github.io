@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" />
     <script type="module">
         import { initPage } from './script.js';
         window.onload = initPage;
@@ -11,26 +12,24 @@
     <title>Ellen Choi Portfolio</title>
 </head>
 <body>
-
     <header>
-        <div id="grid_main">
-            <h1 id="my_name" class="cursor">ELLEN CHOI</h1>
+        <h1 id="my_name" class="cursor">ELLEN CHOI</h1>
 
-            <nav>
-                <a id="proj_button" class="menu_item" href="index.html">Projects</a>
+        <nav>
+            <a id="proj_button" class="menu_item" href="index.html">Projects</a>
 
-                <ol id="project_options">
-                    <li><a class="menu_item" href="index.html">Featured Projects</a></li>
-                    <li><a id="all_proj" class="menu_item" href="index.html">All Projects</a></li>
-                </ol>
+            <ol id="project_options">
+                <li><a class="menu_item" href="index.html">Featured Projects</a></li>
+                <li><a id="all_proj" class="menu_item" href="index.html">All Projects</a></li>
+            </ol>
 
-                <a id="about" class="menu_item" href="index.html">About</a>
-            </nav>
-        </div>
+            <a id="about" class="menu_item" href="index.html">About</a>
+        </nav>
     </header>
 
-    <div class="background">
-        <h1 class="">Adventure Machine VR</h1>
+    <div id="background">
+        <h1>Adventure Machine VR</h1>
+
         <span class="language">Unity</span>
         <span class="language">C#</span>
         <span class="language">Oculus Rift</span>
@@ -42,39 +41,43 @@
 
         <a href="https://www.youtube.com/watch?v=PXbE9RbXcv0">Link to Video Demo</a>
 
-        <div class="proj_description">
-            <a href="http://ivl.calit2.net/wiki/index.php/Project4W19">Project Rubric and Directions</a>
+        <div id="proj_description">
+            <section>
+                <p>Technical Features Implemented:</p>
 
-            <p>Technical Features Implemented:</p>
+                <a href="http://ivl.calit2.net/wiki/index.php/Project4W19">Project Rubric and Directions</a>
 
-            <ol>
-                <li>Object Manipulation (grab with virtual hand)</li>
-                <li>Travel (move by teleportation and move my "grabbing the air")</li>
-                <li>System Control (wrist menu and sound control)</li>
-                <li>Interactive Tutorial</li>
-            </ol>
+                <ol>
+                    <li>Object Manipulation (grab with virtual hand)</li>
+                    <li>Travel (move by teleportation and move my "grabbing the air")</li>
+                    <li>System Control (wrist menu and sound control)</li>
+                    <li>Interactive Tutorial</li>
+                </ol>
+            </section>
 
-            <p>Controls:</p>
+            <section>
+                <p>Controls:</p>
 
-            <ul>
-                <li>Press and hold the left or right hand trigger and have the corresponding virtual hand collide into an object to grab it.</li>
-                <li>"Grab the Air" travel mode: Grab the air and move the controller in the direction opposite of where you want to go.</li>
-                <li>Teleportation travel mode: Point the ray (on the virtual left hand) at the floor and press the left hand trigger to move to the marked spot.</li>
-                <li>
-                    Have the virtual hand collide with a launchpad button or synthesizer key to press it, as you would in the real world.
-                    <ul>
-                        <li>This works best when the middle finger rests on top of the hand trigger (not pressing it) so that only the virtual hand's index finger is extended.</li>
-                    </ul>
-                </li>
-                <li>Wrist Menu: Orient the left virtual hand as if looking at a watch. Press the menu items as you would with the launchpad buttons or synthesizer keys.</li>
-                <li>
-                    Sound Control:
-                    <ul>
-                        <li>Dials: Grab the dials and turn the virtual hand (around the y axis).</li>
-                        <li>Slider: Grab the handle and move the virtual hand in the desired direction.</li>
-                    </ul>
-                </li>
-            </ul>
+                <ul>
+                    <li>Press and hold the left or right hand trigger and have the corresponding virtual hand collide into an object to grab it.</li>
+                    <li>"Grab the Air" travel mode: Grab the air and move the controller in the direction opposite of where you want to go.</li>
+                    <li>Teleportation travel mode: Point the ray (on the virtual left hand) at the floor and press the left hand trigger to move to the marked spot.</li>
+                    <li>
+                        Have the virtual hand collide with a launchpad button or synthesizer key to press it, as you would in the real world.
+                        <ul>
+                            <li>This works best when the middle finger rests on top of the hand trigger (not pressing it) so that only the virtual hand's index finger is extended.</li>
+                        </ul>
+                    </li>
+                    <li>Wrist Menu: Orient the left virtual hand as if looking at a watch. Press the menu items as you would with the launchpad buttons or synthesizer keys.</li>
+                    <li>
+                        Sound Control:
+                        <ul>
+                            <li>Dials: Grab the dials and turn the virtual hand (around the y axis).</li>
+                            <li>Slider: Grab the handle and move the virtual hand in the desired direction.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
         </div>
     </div>
 </body>

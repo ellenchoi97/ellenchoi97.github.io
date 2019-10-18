@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" />
     <script type="module">
         import { initPage } from './script.js';
         window.onload = initPage;
@@ -12,8 +13,10 @@
 </head>
 <body>
     <div class="img_string hide">Assets/Snake/gameplay.gif</div>
-    <div class="img_string hide">Assets/Snake/start_screen.JPG</div>
     <div class="img_string hide">Assets/Snake/game_over.JPG</div>
+    <div class="img_string hide">Assets/Snake/start_screen.JPG</div>
+    <div class="img_string hide">Assets/Snake/two_gameplay.gif</div>
+    <div class="img_string hide">Assets/Snake/two_game_over.JPG</div>
 
     <header>
         <div id="grid_main">
@@ -32,37 +35,41 @@
         </div>
     </header>
 
-    <div class="background">
-        <h1 class="">Snake</h1>
+    <div id="background">
+        <h1>Snake</h1>
         <span class="language">Python</span>
         <span class="language">Pygame</span>
 
-        <div class="proj_description">
+        <div id="proj_description">
 
-            <p>This project is a remake of the classic arcade game, Snake.</p>
+            <p>This project is a remake of the classic arcade game, Snake, using the Pygame module for the graphics of the game.
+               The game involves a single player and a two player mode. The single player mode is the traditional playing mode
+               for the game. The two player mode involves two players competing against each other for the food, and the game ends
+               when one player dies by going out of bounds or colliding with its body.</p>
 
-            <a href="http://ivl.calit2.net/wiki/index.php/Project4W19">Github Link</a>
+            <a href="https://github.com/ellenchoi97/Snake">Github Link</a>
 
             <!-- Code for image gallery: https://www.w3schools.com/howto/howto_js_slideshow_gallery.asp -->
             <!-- Container for the image gallery -->
-            <div class="gallery_container gallery">
+            <div id="gallery_container" class="gallery">
 
                 <!-- Full-width images with number text -->
-                <div class="slide gallery">
-                    <span class="slideNum gallery"></span>
-                    <img src="" class="gallery_img gallery">
-                </div>
+                <figure id="slide" class="gallery">
+                    <span id="slideNum" class="gallery"></span>
+                    <img id="gallery_img" class=" gallery">
+
+                    <!-- Image text -->
+                    <figcaption></figcaption>
+
+                </figure>
 
                 <!-- Next and previous buttons -->
-                <button class="prev cursor">&#10094;</button>
-                <button class="next cursor">&#10095;</button>
-
-                <!-- Image text -->
-                <p class="caption"></p>
+                <button id="prev" class="cursor">&#10094;</button>
+                <button id="next" class="cursor">&#10095;</button>
 
                 <!-- Thumbnail images -->
-                <div class="thumbnails">
-                    <img class="thumbnail_img cursor show" src="Assets/Snake/gameplay_icon.JPG" alt="Single Player Gameplay">
+                <div id="thumbnails">
+                    <img id="active" class="thumbnail_img cursor show" src="Assets/Snake/gameplay_icon.JPG" alt="Single Player Gameplay">
                     <img class="thumbnail_img cursor show" src="Assets/Snake/game_over.JPG" alt="Game Over Screen">
                     <img class="thumbnail_img cursor show" src="Assets/Snake/start_screen.JPG" alt="Game Start Screen">
                     <img class="thumbnail_img cursor show" src="Assets/Snake/two_gameplay_icon.JPG" alt="Two Player Gameplay">

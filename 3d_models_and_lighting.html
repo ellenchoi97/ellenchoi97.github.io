@@ -4,9 +4,10 @@
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" />
     <script type="module">
-        import { initProjPage } from './script.js';
-        window.onload = initProjPage;
+        import { initPage } from './script.js';
+        window.onload = initPage;
     </script>
     <title>Ellen Choi Portfolio</title>
 </head>
@@ -23,24 +24,23 @@
     <div class="img_string hide">Assets/CSE167HW2/hw2_rotating.gif</div>
 
     <header>
-        <div id="grid_main">
-            <h1 id="my_name" class="cursor">ELLEN CHOI</h1>
+        <h1 id="my_name" class="cursor">ELLEN CHOI</h1>
 
-            <nav>
-                <a id="proj_button" class="menu_item" href="index.html">Projects</a>
+        <nav>
+            <a id="proj_button" class="menu_item" href="index.html">Projects</a>
 
-                <ol id="project_options">
-                    <li><a class="menu_item" href="index.html">Featured Projects</a></li>
-                    <li><a id="all_proj" class="menu_item" href="index.html">All Projects</a></li>
-                </ol>
+            <ol id="project_options">
+                <li><a class="menu_item" href="index.html">Featured Projects</a></li>
+                <li><a id="all_proj" class="menu_item" href="index.html">All Projects</a></li>
+            </ol>
 
-                <a id="about" class="menu_item" href="index.html">About</a>
-            </nav>
-        </div>
+            <a id="about" class="menu_item" href="index.html">About</a>
+        </nav>
     </header>
 
-    <div class="background">
-        <h1 class="">3D Models and Lighting</h1>
+    <div id="background">
+        <h1>3D Models and Lighting</h1>
+
         <span class="language">C++</span>
         <span class="language">OpenGL</span>
 
@@ -52,24 +52,24 @@
 
         <!-- Code for image gallery: https://www.w3schools.com/howto/howto_js_slideshow_gallery.asp -->
         <!-- Container for the image gallery -->
-        <div class="gallery_container gallery">
+        <div id="gallery_container" class="gallery">
 
             <!-- Full-width images with number text -->
-            <div class="slide gallery">
-                <span class="slideNum gallery"></span>
-                <img src="" class="gallery_img gallery">
-            </div>
+            <figure id="slide" class="gallery">
+                <span id="slideNum" class="gallery"></span>
+                <img id="gallery_img" class="gallery">
+
+                <!-- Image text -->
+                <figcaption></figcaption>
+            </figure>
 
             <!-- Next and previous buttons -->
-            <button class="prev cursor">&#10094;</button>
-            <button class="next cursor">&#10095;</button>
-
-            <!-- Image text -->
-            <p class="caption"></p>
+            <button id="prev" class="cursor">&#10094;</button>
+            <button id="next" class="cursor">&#10095;</button>
 
             <!-- Thumbnail images -->
-            <div class="thumbnails">
-                <img class="thumbnail_img cursor show" src="Assets/CSE167HW2/Bunny_material.JPG" alt="Model with shiny and no diffuse reflection material properties under directional light">
+            <div id="thumbnails">
+                <img id="active" class="thumbnail_img cursor show" src="Assets/CSE167HW2/Bunny_material.JPG" alt="Model with shiny and no diffuse reflection material properties under directional light">
                 <img class="thumbnail_img cursor show" src="Assets/CSE167HW2/Dragon_material.JPG" alt="Model with only diffuse reflection material properties under directional light">
                 <img class="thumbnail_img cursor show" src="Assets/CSE167HW2/Bear_material.JPG" alt="Model with significant diffuse and specular reflection material properties under directional light">
                 <img class="thumbnail_img cursor show" src="Assets/CSE167HW2/directional_movement_icon.JPG" alt="Directional light's reflection as the light source rotates around the model">
@@ -82,53 +82,60 @@
             </div>
         </div>
 
-        <div class="proj_description">
-            <a href="http://ivl.calit2.net/wiki/index.php/Project2F18">Project Rubric and Directions</a>
+        <div id="proj_description">
 
-            <p>Goals for this Project:</p>
+            <section>
+                <h2>Goals for this Project:</h2>
 
-            <ol>
-                <li>Parse the faces from the .obj files and display the models with triangles.</li>
-                <li>Use the mouse to rotate and scale the model.</li>
-                <li>
-                    Assign different material properties for each model:
-                    <ul>
-                        <li>Shiny, with no diffuse reflection</li>
-                        <li>No shininess, only uses diffuse reflection</li>
-                        <li>Significant diffuse and specular reflection components</li>
-                    </ul>
-                </li>
-                <li>
-                    Create three different light sources - point light, directional light, and spotlight - with three different colors.
-                    Render spheres to represent the location and color of the light sources.
-                </li>
-                <li>When a light's rotation is disabled, keep the light fixed in the model space.</li>
-            </ol>
+                <a href="http://ivl.calit2.net/wiki/index.php/Project2F18">Project Rubric and Directions</a>
 
-            <p>Keyboard Key Functions:</p>
+                <ol>
+                    <li>Parse the faces from the .obj files and display the models with triangles.</li>
+                    <li>Use the mouse to rotate and scale the model.</li>
+                    <li>
+                        Assign different material properties for each model:
+                        <ul>
+                            <li>Shiny, with no diffuse reflection</li>
+                            <li>No shininess, only uses diffuse reflection</li>
+                            <li>Significant diffuse and specular reflection components</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Create three different light sources - point light, directional light, and spotlight - with three different colors.
+                        Render spheres to represent the location and color of the light sources.
+                    </li>
+                    <li>When a light's rotation is disabled, keep the light fixed in the model space.</li>
+                </ol>
+            </section>
 
-            <ul>
-                <li>F1: Render the bunny model</li>
-                <li>F2: Render the dragon model</li>
-                <li>F3: Render the bear model</li>
-                <li>n: Switch between normal coloring and the Phong illumination model</li>
-                <li>1: Enable/disable point light rotation</li>
-                <li>2: Enable/disable spotlight rotation</li>
-                <li>3: Enable/disable directional light rotation</li>
-                <li>5: Turn the spotlight on/off</li>
-                <li>6: Turn the directional light on/off</li>
-                <li>0: Turn model rotation on/off</li>
-                <li>W/w: The spotlight becomes wider/narrower</li>
-                <li>E/e: The spot edge becomes sharper/blurrier</li>
-            </ul>
+            <section>
+                <h2>Keyboard Key Functions:</h2>
 
-            <p>Mouse Functionality:</p>
+                <ul>
+                    <li>F1: Render the bunny model</li>
+                    <li>F2: Render the dragon model</li>
+                    <li>F3: Render the bear model</li>
+                    <li>n: Switch between normal coloring and the Phong illumination model</li>
+                    <li>1: Enable/disable point light rotation</li>
+                    <li>2: Enable/disable spotlight rotation</li>
+                    <li>3: Enable/disable directional light rotation</li>
+                    <li>5: Turn the spotlight on/off</li>
+                    <li>6: Turn the directional light on/off</li>
+                    <li>0: Turn model rotation on/off</li>
+                    <li>W/w: The spotlight becomes wider/narrower</li>
+                    <li>E/e: The spot edge becomes sharper/blurrier</li>
+                </ul>
+            </section>
 
-            <ul>
-                <li>Move the cursor to move the light sources.</li>
-                <li>Hold the left mouse button and move the cursor to rotate the model.</li>
-                <li>Hold the right mouse button and move the cursor up and down to scale the model up and down, respectively.</li>
-            </ul>
+            <section>
+                <h2>Mouse Functionality:</h2>
+
+                <ul>
+                    <li>Move the cursor to move the light sources.</li>
+                    <li>Hold the left mouse button and move the cursor to rotate the model.</li>
+                    <li>Hold the right mouse button and move the cursor up and down to scale the model up and down, respectively.</li>
+                </ul>
+            </section>
         </div>
     </div>
 </body>

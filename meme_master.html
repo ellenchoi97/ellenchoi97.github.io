@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" />
     <script type="module">
         import { initProjPage } from './script.js';
         window.onload = initProjPage;
@@ -22,24 +23,23 @@
     <div class="img_string hide">Assets/CSE134BImages/change_pass.gif</div>
 
     <header>
-        <div id="grid_main">
-            <h1 id="my_name" class="cursor">ELLEN CHOI</h1>
+        <h1 id="my_name" class="cursor">ELLEN CHOI</h1>
 
-            <nav>
-                <a id="proj_button" class="menu_item" href="index.html">Projects</a>
+        <nav>
+            <a id="proj_button" class="menu_item" href="index.html">Projects</a>
 
-                <ol id="project_options">
-                    <li><a class="menu_item" href="index.html">Featured Projects</a></li>
-                    <li><a id="all_proj" class="menu_item" href="index.html">All Projects</a></li>
-                </ol>
+            <ol id="project_options">
+                <li><a class="menu_item" href="index.html">Featured Projects</a></li>
+                <li><a id="all_proj" class="menu_item" href="index.html">All Projects</a></li>
+            </ol>
 
-                <a id="about" class="menu_item" href="index.html">About</a>
-            </nav>
-        </div>
+            <a id="about" class="menu_item" href="index.html">About</a>
+        </nav>
     </header>
 
-    <div class="background">
-        <h1 class="">MemeMaster</h1>
+    <div id="background">
+        <h1>MemeMaster</h1>
+
         <span class="language">HTML</span>
         <span class="language">CSS</span>
         <span class="language">JavaScript</span>
@@ -50,24 +50,24 @@
 
         <!-- Code for image gallery: https://www.w3schools.com/howto/howto_js_slideshow_gallery.asp -->
         <!-- Container for the image gallery -->
-        <div class="gallery_container gallery">
+        <div id="gallery_container" class="gallery">
 
             <!-- Full-width images with number text -->
-            <div class="slide gallery">
-                <span class="slideNum gallery"></span>
-                <img src="" class="gallery_img gallery">
-            </div>
+            <figure id="slide" class="gallery">
+                <span id="slideNum" class="gallery"></span>
+                <img id="gallery_img" class="gallery">
+
+                <!-- Image text -->
+                <figcaption></figcaption>
+            </figure>
 
             <!-- Next and previous buttons -->
-            <button class="prev cursor">&#10094;</button>
-            <button class="next cursor">&#10095;</button>
-
-            <!-- Image text -->
-            <p class="caption"></p>
+            <button id="prev" class="cursor">&#10094;</button>
+            <button id="next" class="cursor">&#10095;</button>
 
             <!-- Thumbnail images -->
-            <div class="thumbnails">
-                <img class="thumbnail_img cursor show" src="Assets/CSE134BImages/create_account_icon.JPG" alt="Creating an account">
+            <div id="thumbnails">
+                <img id="active" class="thumbnail_img cursor show" src="Assets/CSE134BImages/create_account_icon.JPG" alt="Creating an account">
                 <img class="thumbnail_img cursor show" src="Assets/CSE134BImages/login_icon.JPG" alt="Logging into account">
                 <img class="thumbnail_img cursor show" src="Assets/CSE134BImages/view_meme_icon.JPG" alt="Viewing memes in account">
                 <img class="thumbnail_img cursor show" src="Assets/CSE134BImages/add_meme_icon.JPG" alt="Creating a new meme">
@@ -79,26 +79,28 @@
             </div>
         </div>
 
-        <div class="proj_description">
-            <p>Goals for this Project:</p>
+        <div id="proj_description">
+            <section>
+                <h2>Goals for this Project:</h2>
 
-            <ol>
-                <li>Implement a sign-up and login mechanism to allow users to view their memes privately.</li>
-                <li>Allow the user to add existing memes, either through upload or by URL.</li>
-                <li>
-                    Allow the user to compose their own memes by
-                    <ul>
-                        <li>Importing an image (either through upload or by URL).</li>
-                        <li>Adding 1-2 lines of meme style text (Impact font).</li>
-                        <li>Include a customizable feature (changing font and its size).</li>
-                    </ul>
-                </li>
-                <li>Allow a locallly created meme to be edited.</li>
-                <li>List the memes so that the user may see what memes they have.</li>
-                <li>Allow the user to delete memes. Include a confirmation of deletion before deleting the meme.</li>
-                <li>Implement a distribution mechanism to allow the user to share their memes (download to local computer and copy URL to clipboard).</li>
-                <li>Allow the user to manage their account by implementing logout and password change mechanisms.</li>
-            </ol>
+                <ol>
+                    <li>Implement a sign-up and login mechanism to allow users to view their memes privately.</li>
+                    <li>Allow the user to add existing memes, either through upload or by URL.</li>
+                    <li>
+                        Allow the user to compose their own memes by
+                        <ul>
+                            <li>Importing an image (either through upload or by URL).</li>
+                            <li>Adding 1-2 lines of meme style text (Impact font).</li>
+                            <li>Include a customizable feature (changing font and its size).</li>
+                        </ul>
+                    </li>
+                    <li>Allow a locallly created meme to be edited.</li>
+                    <li>List the memes so that the user may see what memes they have.</li>
+                    <li>Allow the user to delete memes. Include a confirmation of deletion before deleting the meme.</li>
+                    <li>Implement a distribution mechanism to allow the user to share their memes (download to local computer and copy URL to clipboard).</li>
+                    <li>Allow the user to manage their account by implementing logout and password change mechanisms.</li>
+                </ol>
+            </section>
         </div>
     </div>
 </body>
