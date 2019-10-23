@@ -186,7 +186,7 @@ export function initIndex() {
     }
 
     var projects = document.getElementById("icon_grid");
-    projects.style.width = projects.getBoundingClientRect().width - 50;
+    projects.style.width = (projects.getBoundingClientRect().width - 100) + "px";
 
     window.addEventListener("scroll", initScrollEvents);
     initScrollEvents();
