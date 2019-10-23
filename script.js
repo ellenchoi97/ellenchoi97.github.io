@@ -22,7 +22,8 @@ function initScrollEvents() {
     var proj_grid_bound = proj_grid.getBoundingClientRect();
     if (proj_grid.style.opacity == 0 &&
         (Math.abs(projects.getBoundingClientRect().y - offset) < 50) ||
-            (proj_grid_bound.top >= 0 && proj_grid_bound.bottom <= (window.innerHeight || document.documentElement.clientHeight))) {
+        (proj_grid_bound.top >= 0 && proj_grid_bound.bottom <= (window.innerHeight || document.documentElement.clientHeight))) {
+        proj_grid.style.width = "auto";
         proj_grid.style.opacity = 1;
         proj_grid.style.transform = "translateX(0px)";
     }
@@ -183,6 +184,9 @@ export function initIndex() {
 
         sessionStorage.removeItem("jumpTo");
     }
+
+    var projects = document.getElementById("icon_grid");
+    projects.style.width = projects.getBoundingClientRect().width - 50;
 
     window.addEventListener("scroll", initScrollEvents);
     initScrollEvents();
