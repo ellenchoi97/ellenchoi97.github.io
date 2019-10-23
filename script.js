@@ -1,16 +1,5 @@
 /* -------------------------------- */
-//All pages
-export function initPage() {
-    document.getElementById('project_options').style.right = document.getElementById("about").getBoundingClientRect().width + "px";
-
-    document.getElementById("my_name").addEventListener("click", function () { nextPage("index.html"); });
-    document.getElementById("all_proj").addEventListener("click", function () { sessionStorage.setItem("jumpTo", 1); });
-    document.getElementById("about").addEventListener("click", function () { sessionStorage.setItem("jumpTo", 2); });
-}
-
-/* -------------------------------- */
 //index.html
-
 function initScrollEvents() {
     var header = document.getElementsByTagName("header")[0];
     var headerHeight = header.offsetHeight;
@@ -155,6 +144,20 @@ function traverseProj(direction) {
     }, 1000);
 }
 
+function openFilter() {
+    var filterButton = document.getElementById("filter");
+    var viewOptions = document.getElementById("proj_categories");
+
+    if (filterButton.innerHTML == "Filter") {
+        viewOptions.style.display = "block";
+        filterButton.innerHTML = "Hide";
+    }
+    else {
+        viewOptions.style.display = "none";
+        filterButton.innerHTML = "Filter";
+    }
+}
+
 //Go to the linked page
 function nextPage(page) {
     location.href = page;
@@ -162,8 +165,6 @@ function nextPage(page) {
 
 //Add onclick functions to elements
 export function initIndex() {
-    initPage();
-
     var goToProj = sessionStorage.getItem("jumpTo");
     if (goToProj != null) {
         if (goToProj == 1) {
@@ -183,9 +184,12 @@ export function initIndex() {
         sessionStorage.removeItem("jumpTo");
     }
 
+    window.addEventListener("scroll", initScrollEvents);
     initScrollEvents();
 
     document.getElementById('top_projects').className += 'loaded';
+
+    document.getElementById("filter").addEventListener("click", openFilter);
 
     var options = document.getElementsByClassName("view_option");
     for (let i = 0; i < options.length; i++) {
@@ -199,7 +203,21 @@ export function initIndex() {
     prev_button.addEventListener("click", function () { if (prev_button.style.opacity == 1) { traverseProj(-1); } });
     next_button.addEventListener("click", function () { if (next_button.style.opacity == 1) { traverseProj(1); } });
 
-    window.addEventListener("scroll", initScrollEvents);
+    /* https://stackoverflow.com/questions/45071353/copy-text-string-on-click */
+    var email = document.getElementById("email");
+    email.onclick = function () {
+        document.execCommand("copy");
+    }
+
+    email.addEventListener("copy", function (event) {
+        event.preventDefault();
+        if (event.clipboardData) {
+            event.clipboardData.setData("text/plain", email.textContent);
+            email.innerHTML = "Copied!";
+            window.setTimeout(function () { email.innerHTML = "ellenchoi97@gmail.com"; }, 1000);
+        }
+
+    });
 
     document.getElementById("resume_icon").addEventListener("click", function () { nextPage("Assets/Ellen_Choi_Resume.pdf") });
 
@@ -229,6 +247,8 @@ export function initIndex() {
     document.getElementById("169_3_icon").addEventListener("click", function () { nextPage("skeleton_skinning_keyframe_animation.html") });
     document.getElementById("169_4_icon").addEventListener("click", function () { nextPage("cloth_simulation.html") });
     document.getElementById("169_5_icon").addEventListener("click", function () { nextPage("inverse_kinematics.html") });
+    document.getElementById("snake").addEventListener("click", function () { nextPage("snake.html") });
+    document.getElementById("tetris").addEventListener("click", function () { nextPage("tetris.html") });
 }
 
 /* -------------------------------- */
@@ -293,8 +313,16 @@ export function currentSlide(n) {
     showSlides();
 }
 
+function initHeaderLinks() {
+    document.getElementById('project_options').style.right = document.getElementById("about").getBoundingClientRect().width + "px";
+
+    document.getElementById("my_name").addEventListener("click", function () { nextPage("index.html"); });
+    document.getElementById("all_proj").addEventListener("click", function () { sessionStorage.setItem("jumpTo", 1); });
+    document.getElementById("about").addEventListener("click", function () { sessionStorage.setItem("jumpTo", 2); });
+}
+
 export function initProjPage() {
-    initPage();
+    initHeaderLinks();
 
     var header = document.getElementsByTagName("header")[0];
     header.style.height = "65px";

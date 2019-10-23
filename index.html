@@ -3,6 +3,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
     <link rel="stylesheet" href="style.css" />
     <script type="module">
         import { initIndex } from './script.js';
@@ -13,17 +14,6 @@
 <body>
     <header>
         <h1 id="my_name" class="cursor">ELLEN CHOI</h1>
-
-        <nav>
-            <a id="proj_button" class="menu_item" href="index.html">Projects</a>
-
-            <ol id="project_options">
-                <li><a class="menu_item" href="index.html">Featured Projects</a></li>
-                <li><a id="all_proj" class="menu_item" href="index.html">All Projects</a></li>
-            </ol>
-
-            <a id="about" class="menu_item" href="index.html">About</a>
-        </nav>
     </header>
 
     <section id="full_page">
@@ -53,6 +43,8 @@
         <h2 class="section_title">All Projects</h2>
 
         <div id="projects_content">
+            <button id="filter">Filter</button>
+
             <aside id="proj_categories">
                 <ul>
                     <li id="all" class="view_option cursor">All</li>
@@ -149,6 +141,16 @@
                     <img id="169_5_icon" src="Assets/CSE169Images/169hw5_icon.JPG" />
                     <a href="inverse_kinematics.html">Inverse Kinematics</a>
                 </figure>
+
+                <figure class="project cursor python personal hidden">
+                    <img id="snake" class="proj_icon" src="Assets/Snake/icon.JPG" />
+                    <a class="proj_text" href="snake.html">Snake</a>
+                </figure>
+
+                <figure class="project cursor python personal hidden">
+                    <img id="tetris" class="proj_icon" src="Assets/Tetris/icon.JPG" />
+                    <a class="proj_text" href="tetris.html">Tetris</a>
+                </figure>
             </div>
 
             <div id="view_buttons">
@@ -163,47 +165,52 @@
 
     <section id="about_me">
         <h2 class="section_title">About Me</h2>
-        <div id="about_content">
-            <div>
-                <img class="small_icon" src="Assets/Icons/github.png" />
-                <a href="https://github.com/ellenchoi97">Github</a>
+        <div id="about_grid">
+            <div id="about_row_1">
+                <div class="about_link_div">
+                    <img class="small_icon" src="Assets/Icons/github.png" />
+                    <a class="about_link" href="https://github.com/ellenchoi97">https://github.com/ellenchoi97</a>
+                </div>
+
+                <div class="about_link_div">
+                    <img class="small_icon" src="Assets/Icons/email.png" />
+                    <span id="email" class="about_link cursor">ellenchoi97@gmail.com</span>
+                </div>
+
+                <span id="placeholder"></span>
+                <!--<span>TMI page</span>-->
             </div>
-            <div>
-                <img class="small_icon" src="Assets/Icons/email.png" />
-                <span id="email">ellenchoi97@gmail.com</span>
-            </div>
 
-            <span id="placeholder"></span>
-            <!--<span>TMI page</span>-->
+            <div id="about_row_2">
+                <div id="about_languages">
+                    <h3 class="about_description_title">Languages</h3>
 
-            <div id="about_languages">
-                <h3 class="about_description_title">Languages</h3>
+                    <ul class="content">
+                        <li>• Java</li>
+                        <li>• C/C++</li>
+                        <li>• C#</li>
+                        <li>• OpenGL</li>
+                        <li>• Python</li>
+                        <li>• HTML/CSS/JavaScript</li>
+                    </ul>
+                </div>
 
-                <div class="content">
-                    <span>Java</span>
-                    <span>C/C++</span>
-                    <span>C#</span>
-                    <span>OpenGL</span>
-                    <span>Python</span>
-                    <span>HTML/CSS/JavaScript</span>
+                <div id="resume">
+                    <img id="resume_icon" class="cursor" src="Assets/resume_thumbnail.png" />
+                    <a href="Assets/Ellen_Choi_Resume.pdf">Resume</a>
+                </div>
+
+                <div id="about_software">
+                    <h3 class="about_description_title">Software/Engines</h3>
+                    <ul class="content">
+                        <li>Visual Studio</li>
+                        <li>Unity</li>
+                        <li>Git</li>
+                    </ul>
                 </div>
             </div>
 
-            <div id="resume">
-                <img id="resume_icon" class="cursor" src="Assets/resume_thumbnail.png" />
-                <a href="Assets/Ellen_Choi_Resume.pdf">Resume</a>
-            </div>
-
-            <div id="about_software">
-                <h3 class="about_description_title">Software/Engines</h3>
-                <div class="content">
-                    <span>Visual Studio</span>
-                    <span>Unity</span>
-                    <span>Git</span>
-                </div>
-            </div>
             <p id="icon_credit">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
-
         </div>
     </section>
 </body>
